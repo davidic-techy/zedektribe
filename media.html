@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tribe of Zedek | The Journal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              zedek: {
+                gold: "#D4AF37",
+                goldlight: "#F3E5AB",
+                navy: "#0B1120",
+                navylight: "#1E293B",
+                charcoal: "#334155",
+                cream: "#F8FAFC",
+              },
+            },
+            fontFamily: {
+              serif: ["Lora", "serif"],
+              display: ["Cinzel", "serif"],
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .fade-in {
+        animation: fadeIn 0.8s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      /* Custom class for documentary style images */
+      .docu-img {
+        filter: grayscale(100%);
+        transition: all 0.5s ease;
+      }
+      .docu-img:hover {
+        filter: grayscale(0%);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-zedek-navy text-slate-300 font-sans h-screen flex flex-col md:flex-row overflow-hidden"
+  >
+    <nav
+      class="w-full md:w-64 bg-zedek-navylight border-r border-white/5 flex-shrink-0 flex md:flex-col justify-between z-50 fixed bottom-0 md:relative md:h-full shadow-2xl"
+    >
+      <div class="hidden md:flex flex-col items-center pt-10 px-6 text-center">
+        <div
+          class="w-12 h-12 border-2 border-zedek-gold rotate-45 flex items-center justify-center mb-6"
+        >
+          <span
+            class="text-zedek-gold font-display font-bold text-xl -rotate-45"
+            >Z</span
+          >
+        </div>
+        <h1 class="font-display text-xl text-white tracking-widest">
+          TRIBE OF ZEDEK
+        </h1>
+      </div>
+      <div
+        class="flex md:flex-col justify-around md:justify-start w-full md:w-auto md:px-4 md:mt-10 md:space-y-2 py-3 md:py-0 bg-zedek-navylight/95 backdrop-blur md:bg-transparent border-t border-white/5 md:border-none"
+      >
+        <a
+          href="index.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="crown"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >Mandate</span
+          ></a
+        >
+        <a
+          href="expressions.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="layers"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >Expressions</span
+          ></a
+        >
+        <a
+          href="media.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="book-open"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >Journal</span
+          ></a
+        >
+        <a
+          href="store.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg bg-white/5 transition group text-zedek-gold"
+          ><i
+            data-lucide="shopping-bag"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 text-zedek-gold"
+          ></i
+          ><span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >The Armory</span
+          ></a
+        >
+        <a
+          href="join.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="user-plus"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >Join</span
+          ></a
+        >
+      </div>
+      <div class="hidden md:block p-6 text-center">
+        <p class="text-[10px] text-slate-500 uppercase tracking-widest">
+          &copy; 2026 Tribe of Zedek
+        </p>
+      </div>
+    </nav>
+
+    <main
+      class="flex-1 overflow-y-auto relative no-scrollbar pb-24 md:pb-0 bg-zedek-navy"
+    >
+      <header
+        class="pt-20 px-6 md:px-12 pb-6 border-b border-white/5 flex flex-col md:flex-row justify-between md:items-end gap-4"
+      >
+        <div>
+          <span
+            class="text-zedek-gold text-xs font-bold tracking-widest uppercase block mb-2"
+            >Formation & Witness</span
+          >
+          <h2 class="text-4xl font-display text-white">The Journal</h2>
+        </div>
+        <p
+          class="text-slate-500 text-xs uppercase tracking-widest max-w-xs text-right hidden md:block"
+        >
+          Documenting the life,<br />sound, and formation of the Tribe.
+        </p>
+      </header>
+
+      <div class="max-w-6xl mx-auto">
+        <section class="px-6 md:px-12 py-16">
+          <div class="flex items-center gap-4 mb-8">
+            <h3 class="text-2xl font-display text-white">Reflections</h3>
+            <div class="h-px bg-white/10 flex-1"></div>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <article class="group cursor-pointer">
+              <span
+                class="text-zedek-gold text-[10px] uppercase tracking-widest block mb-2"
+                >Jan 12 • Pastoral</span
+              >
+              <h4
+                class="text-xl text-white font-serif italic mb-3 group-hover:text-zedek-gold transition"
+              >
+                Learning to Serve Without Visibility
+              </h4>
+              <p
+                class="text-sm text-slate-400 leading-relaxed mb-4 line-clamp-3"
+              >
+                In a generation obsessed with platforms, the priesthood calls us
+                to the secret place. What happens when the applause stops but
+                the service continues?
+              </p>
+              <span
+                class="text-xs text-slate-500 uppercase border-b border-slate-700 pb-1 group-hover:border-zedek-gold transition"
+                >Read Reflection</span
+              >
+            </article>
+
+            <article class="group cursor-pointer">
+              <span
+                class="text-zedek-gold text-[10px] uppercase tracking-widest block mb-2"
+                >Jan 05 • Sound</span
+              >
+              <h4
+                class="text-xl text-white font-serif italic mb-3 group-hover:text-zedek-gold transition"
+              >
+                When Sound Becomes Obedience
+              </h4>
+              <p
+                class="text-sm text-slate-400 leading-relaxed mb-4 line-clamp-3"
+              >
+                Music is physics, but sound is spiritual. Exploring the
+                difference between playing a chord and releasing a burden.
+              </p>
+              <span
+                class="text-xs text-slate-500 uppercase border-b border-slate-700 pb-1 group-hover:border-zedek-gold transition"
+                >Read Reflection</span
+              >
+            </article>
+
+            <article class="group cursor-pointer">
+              <span
+                class="text-zedek-gold text-[10px] uppercase tracking-widest block mb-2"
+                >Dec 28 • Culture</span
+              >
+              <h4
+                class="text-xl text-white font-serif italic mb-3 group-hover:text-zedek-gold transition"
+              >
+                Raising Young Hearts in a Loud World
+              </h4>
+              <p
+                class="text-sm text-slate-400 leading-relaxed mb-4 line-clamp-3"
+              >
+                Silence is becoming an endangered species. How we are creating
+                pockets of quiet for the next generation to hear God.
+              </p>
+              <span
+                class="text-xs text-slate-500 uppercase border-b border-slate-700 pb-1 group-hover:border-zedek-gold transition"
+                >Read Reflection</span
+              >
+            </article>
+          </div>
+        </section>
+
+        <section
+          class="px-6 md:px-12 py-16 bg-zedek-navylight/30 border-y border-white/5"
+        >
+          <div class="flex items-center gap-4 mb-8">
+            <h3 class="text-2xl font-display text-white">Teachings</h3>
+            <div class="h-px bg-white/10 flex-1"></div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-12">
+            <div class="space-y-6">
+              <div
+                class="border-l-2 border-slate-700 pl-4 hover:border-zedek-gold transition"
+              >
+                <h4 class="text-white font-bold text-lg">
+                  The Architecture of Priesthood
+                </h4>
+                <p class="text-sm text-slate-400 mt-1 mb-2">
+                  Recorded at The Upper Room • Nov 2025
+                </p>
+                <p class="text-sm text-slate-500 italic">
+                  "Priesthood is not about a microphone; it is about an altar.
+                  We explored the Levitical order and its relevance today."
+                </p>
+              </div>
+              <div
+                class="border-l-2 border-slate-700 pl-4 hover:border-zedek-gold transition"
+              >
+                <h4 class="text-white font-bold text-lg">
+                  Stewardship of the Secret Place
+                </h4>
+                <p class="text-sm text-slate-400 mt-1 mb-2">
+                  Midweek Charge • Oct 2025
+                </p>
+                <p class="text-sm text-slate-500 italic">
+                  "What you do when no one is watching determines the weight you
+                  carry when everyone is watching."
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="bg-zedek-navy p-8 border border-white/5 flex flex-col justify-center items-center text-center"
+            >
+              <i data-lucide="lock" class="text-zedek-gold w-8 h-8 mb-4"></i>
+              <h4 class="text-white font-display text-xl mb-2">
+                Member Access
+              </h4>
+              <p class="text-sm text-slate-400 mb-6">
+                Full audio teachings are available to committed members of the
+                Tribe to foster deep, consistent study without distraction.
+              </p>
+              <a
+                href="join.html"
+                class="text-zedek-gold text-xs uppercase tracking-widest border border-zedek-gold px-6 py-3 hover:bg-zedek-gold hover:text-zedek-navy transition"
+                >Join The Formation</a
+              >
+            </div>
+          </div>
+        </section>
+
+        <section class="px-6 md:px-12 py-16">
+          <div class="flex items-center gap-4 mb-10">
+            <h3 class="text-2xl font-display text-white">Formation Library</h3>
+            <div class="h-px bg-white/10 flex-1"></div>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <div
+              class="md:col-span-1 bg-zedek-navylight p-6 border border-white/5"
+            >
+              <span
+                class="text-zedek-gold text-[10px] uppercase tracking-widest block mb-4"
+                >Reading Together • January</span
+              >
+              <div class="flex gap-4">
+                <div class="w-24 h-36 bg-slate-800 shrink-0 shadow-lg">
+                  <img
+                    src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=800"
+                    class="w-full h-full object-cover opacity-70"
+                  />
+                </div>
+                <div>
+                  <h4 class="text-white font-bold leading-tight mb-2">
+                    The Pursuit of God
+                  </h4>
+                  <p class="text-xs text-slate-400 italic mb-3">A.W. Tozer</p>
+                  <p class="text-xs text-slate-500 leading-relaxed">
+                    "We are reading this to realign our hunger. Less activity,
+                    more depth."
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="md:col-span-2">
+              <h4 class="text-white font-display mb-6">Spiritual Practices</h4>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <a
+                  href="#"
+                  class="flex items-center p-4 border border-slate-700 hover:border-zedek-gold transition group"
+                >
+                  <i
+                    data-lucide="sunrise"
+                    class="text-slate-500 group-hover:text-zedek-gold mr-4"
+                  ></i>
+                  <div>
+                    <span class="block text-white font-bold text-sm"
+                      >Morning Watch Guide</span
+                    >
+                    <span class="block text-xs text-slate-500"
+                      >PDF • 15 Minute Liturgy</span
+                    >
+                  </div>
+                </a>
+                <a
+                  href="#"
+                  class="flex items-center p-4 border border-slate-700 hover:border-zedek-gold transition group"
+                >
+                  <i
+                    data-lucide="moon"
+                    class="text-slate-500 group-hover:text-zedek-gold mr-4"
+                  ></i>
+                  <div>
+                    <span class="block text-white font-bold text-sm"
+                      >The Examen (Youth)</span
+                    >
+                    <span class="block text-xs text-slate-500"
+                      >PDF • Evening Reflection</span
+                    >
+                  </div>
+                </a>
+                <a
+                  href="#"
+                  class="flex items-center p-4 border border-slate-700 hover:border-zedek-gold transition group"
+                >
+                  <i
+                    data-lucide="book"
+                    class="text-slate-500 group-hover:text-zedek-gold mr-4"
+                  ></i>
+                  <div>
+                    <span class="block text-white font-bold text-sm"
+                      >Scripture Memory Plan</span
+                    >
+                    <span class="block text-xs text-slate-500"
+                      >Printable Cards</span
+                    >
+                  </div>
+                </a>
+                <a
+                  href="#"
+                  class="flex items-center p-4 border border-slate-700 hover:border-zedek-gold transition group"
+                >
+                  <i
+                    data-lucide="music"
+                    class="text-slate-500 group-hover:text-zedek-gold mr-4"
+                  ></i>
+                  <div>
+                    <span class="block text-white font-bold text-sm"
+                      >Formation Playlist</span
+                    >
+                    <span class="block text-xs text-slate-500"
+                      >Spotify Link</span
+                    >
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="px-6 md:px-12 py-16 border-t border-white/5">
+          <div class="flex items-center gap-4 mb-10">
+            <h3 class="text-2xl font-display text-white">Life Among Us</h3>
+            <div class="h-px bg-white/10 flex-1"></div>
+          </div>
+
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+            <div class="relative group h-64 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=2070&auto=format&fit=crop"
+                class="w-full h-full object-cover docu-img"
+              />
+              <div
+                class="absolute bottom-0 left-0 bg-black/80 p-2 w-full opacity-0 group-hover:opacity-100 transition"
+              >
+                <p class="text-[10px] text-white uppercase tracking-widest">
+                  Prayer Walk • Lagos
+                </p>
+              </div>
+            </div>
+            <div class="relative group h-64 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=2069&auto=format&fit=crop"
+                class="w-full h-full object-cover docu-img"
+              />
+              <div
+                class="absolute bottom-0 left-0 bg-black/80 p-2 w-full opacity-0 group-hover:opacity-100 transition"
+              >
+                <p class="text-[10px] text-white uppercase tracking-widest">
+                  Fellowship
+                </p>
+              </div>
+            </div>
+            <div class="relative group h-64 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1509059852496-f382216640f0?q=80&w=2070&auto=format&fit=crop"
+                class="w-full h-full object-cover docu-img"
+              />
+              <div
+                class="absolute bottom-0 left-0 bg-black/80 p-2 w-full opacity-0 group-hover:opacity-100 transition"
+              >
+                <p class="text-[10px] text-white uppercase tracking-widest">
+                  Service
+                </p>
+              </div>
+            </div>
+            <div class="relative group h-64 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1526634332515-d56c075701be?q=80&w=2069&auto=format&fit=crop"
+                class="w-full h-full object-cover docu-img"
+              />
+              <div
+                class="absolute bottom-0 left-0 bg-black/80 p-2 w-full opacity-0 group-hover:opacity-100 transition"
+              >
+                <p class="text-[10px] text-white uppercase tracking-widest">
+                  Worship
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="px-6 md:px-12 py-10 bg-zedek-navylight text-center">
+          <h3
+            class="text-sm font-bold text-zedek-gold uppercase tracking-widest mb-6"
+          >
+            Upcoming Gatherings
+          </h3>
+          <div class="flex flex-wrap justify-center gap-8 md:gap-16">
+            <div class="text-center">
+              <span class="block text-white font-display text-xl">Jan 18</span>
+              <span
+                class="block text-xs text-slate-500 uppercase tracking-widest"
+                >Prayer Walk</span
+              >
+            </div>
+            <div class="text-center">
+              <span class="block text-white font-display text-xl">Feb 02</span>
+              <span
+                class="block text-xs text-slate-500 uppercase tracking-widest"
+                >The Upper Room</span
+              >
+            </div>
+            <div class="text-center">
+              <span class="block text-white font-display text-xl">Feb 14</span>
+              <span
+                class="block text-xs text-slate-500 uppercase tracking-widest"
+                >Love & Purity Talk</span
+              >
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

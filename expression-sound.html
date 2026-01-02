@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tribe of Zedek | Sound & Service</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              zedek: {
+                gold: "#D4AF37",
+                goldlight: "#F3E5AB",
+                navy: "#0B1120",
+                navylight: "#1E293B",
+                charcoal: "#334155",
+                cream: "#F8FAFC",
+              },
+            },
+            fontFamily: {
+              serif: ["Lora", "serif"],
+              display: ["Cinzel", "serif"],
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .fade-in {
+        animation: fadeIn 0.8s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-zedek-navy text-slate-300 font-sans h-screen flex flex-col md:flex-row overflow-hidden"
+  >
+    <nav
+      class="w-full md:w-64 bg-zedek-navylight border-r border-white/5 flex-shrink-0 flex md:flex-col justify-between z-50 fixed bottom-0 md:relative md:h-full shadow-2xl"
+    >
+      <div class="hidden md:flex flex-col items-center pt-10 px-6 text-center">
+        <div
+          class="w-12 h-12 border-2 border-zedek-gold rotate-45 flex items-center justify-center mb-6"
+        >
+          <span
+            class="text-zedek-gold font-display font-bold text-xl -rotate-45"
+            >Z</span
+          >
+        </div>
+        <h1 class="font-display text-xl text-white tracking-widest">
+          TRIBE OF ZEDEK
+        </h1>
+      </div>
+      <div
+        class="flex md:flex-col justify-around md:justify-start w-full md:w-auto md:px-4 md:mt-10 md:space-y-2 py-3 md:py-0 bg-zedek-navylight/95 backdrop-blur md:bg-transparent border-t border-white/5 md:border-none"
+      >
+        <a
+          href="index.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="crown"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >Mandate</span
+          ></a
+        >
+        <a
+          href="expressions.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg bg-white/5 transition group text-zedek-gold"
+          ><i
+            data-lucide="layers"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 text-zedek-gold"
+          ></i
+          ><span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >Expressions</span
+          ></a
+        >
+        <a
+          href="media.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="mic-2"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >Media</span
+          ></a
+        >
+        <a
+          href="store.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="shopping-bag"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >The Armory</span
+          ></a
+        >
+        <a
+          href="join.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="user-plus"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >Join</span
+          ></a
+        >
+      </div>
+      <div class="hidden md:block p-6 text-center">
+        <p class="text-[10px] text-slate-500 uppercase tracking-widest">
+          &copy; 2026 Tribe of Zedek
+        </p>
+      </div>
+    </nav>
+
+    <main
+      class="flex-1 overflow-y-auto relative no-scrollbar pb-24 md:pb-0 bg-zedek-navy"
+    >
+      <header class="pt-10 px-6 md:px-12 flex items-center gap-4">
+        <a
+          href="expressions.html"
+          class="text-slate-500 hover:text-white transition"
+          ><i data-lucide="arrow-left"></i
+        ></a>
+        <span
+          class="text-zedek-gold text-xs font-bold tracking-widest uppercase"
+          >Expression II</span
+        >
+      </header>
+
+      <div class="max-w-6xl mx-auto px-6 md:px-12 py-10 fade-in">
+        <div class="mb-16">
+          <h1 class="text-4xl md:text-5xl font-display text-white mb-6">
+            Sound & Service
+          </h1>
+          <div
+            class="h-64 w-full bg-cover bg-center rounded-sm mb-6 relative"
+            style="
+              background-image: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop');
+            "
+          >
+            <div class="absolute inset-0 bg-zedek-navy/60"></div>
+            <div class="absolute bottom-6 left-6 max-w-lg">
+              <p
+                class="text-white font-serif italic text-lg border-l-2 border-zedek-gold pl-4"
+              >
+                "We do not just play music; we carry an atmosphere. We are a
+                priesthood of sound."
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12">
+          <div
+            class="bg-zedek-navylight p-8 border-t-4 border-slate-600 hover:border-zedek-gold transition group"
+          >
+            <div class="flex items-center gap-3 mb-6">
+              <i data-lucide="church" class="text-zedek-gold w-6 h-6"></i>
+              <h2 class="text-2xl font-display text-white">For Ministries</h2>
+            </div>
+
+            <p class="text-slate-400 mb-6 leading-relaxed">
+              Are you planning a retreat, conference, or revival meeting? Do not
+              settle for just "music." The Tribe of Zedek Sound Team is trained
+              to minister to the Lord and support your vision with spiritual
+              sensitivity and technical excellence.
+            </p>
+
+            <h4
+              class="text-white font-bold text-sm uppercase tracking-widest mb-4"
+            >
+              We Can Serve You With:
+            </h4>
+            <ul class="space-y-3 mb-8 text-sm text-slate-300">
+              <li class="flex items-start">
+                <i
+                  data-lucide="check-circle"
+                  class="text-zedek-gold w-4 h-4 mr-3 mt-1"
+                ></i>
+                <span
+                  ><strong>Full Worship Team:</strong> Vocalists and
+                  instrumentalists who flow in the prophetic.</span
+                >
+              </li>
+              <li class="flex items-start">
+                <i
+                  data-lucide="check-circle"
+                  class="text-zedek-gold w-4 h-4 mr-3 mt-1"
+                ></i>
+                <span
+                  ><strong>Technical Support:</strong> Sound engineering and
+                  stage management.</span
+                >
+              </li>
+              <li class="flex items-start">
+                <i
+                  data-lucide="check-circle"
+                  class="text-zedek-gold w-4 h-4 mr-3 mt-1"
+                ></i>
+                <span
+                  ><strong>Training:</strong> Workshops for your local church
+                  choir.</span
+                >
+              </li>
+            </ul>
+
+            <a
+              href="https://wa.me/234YOURNUMBER?text=Shalom, I represent a ministry and we are interested in inviting the Sound Team."
+              target="_blank"
+              class="inline-block w-full text-center bg-white text-zedek-navy font-bold py-4 hover:bg-zedek-gold transition text-xs uppercase tracking-widest shadow-lg"
+            >
+              Invite The Sound Team
+            </a>
+          </div>
+
+          <div class="bg-zedek-navylight p-8 border-t-4 border-zedek-gold">
+            <div class="flex items-center gap-3 mb-6">
+              <i data-lucide="music-2" class="text-zedek-gold w-6 h-6"></i>
+              <h2 class="text-2xl font-display text-white">For Creatives</h2>
+            </div>
+
+            <p class="text-slate-400 mb-6 leading-relaxed">
+              This is not a gig. This is a formation. If you are tired of
+              playing without purpose, join a brotherhood that values your
+              consecration as much as your skill.
+            </p>
+
+            <h4
+              class="text-white font-bold text-sm uppercase tracking-widest mb-4"
+            >
+              Why Join The Formation?
+            </h4>
+            <div class="grid grid-cols-2 gap-4 mb-8">
+              <div class="bg-zedek-navy p-3 border border-white/5">
+                <i data-lucide="zap" class="text-zedek-gold w-4 h-4 mb-2"></i>
+                <span class="block text-white font-bold text-sm">Skill</span>
+                <span class="text-xs text-slate-500"
+                  >Master your instrument</span
+                >
+              </div>
+              <div class="bg-zedek-navy p-3 border border-white/5">
+                <i data-lucide="flame" class="text-zedek-gold w-4 h-4 mb-2"></i>
+                <span class="block text-white font-bold text-sm">Fire</span>
+                <span class="text-xs text-slate-500"
+                  >Deepen your prayer life</span
+                >
+              </div>
+              <div class="bg-zedek-navy p-3 border border-white/5">
+                <i data-lucide="users" class="text-zedek-gold w-4 h-4 mb-2"></i>
+                <span class="block text-white font-bold text-sm">Tribe</span>
+                <span class="text-xs text-slate-500"
+                  >Brothers who hold you up</span
+                >
+              </div>
+              <div class="bg-zedek-navy p-3 border border-white/5">
+                <i data-lucide="mic" class="text-zedek-gold w-4 h-4 mb-2"></i>
+                <span class="block text-white font-bold text-sm">Platform</span>
+                <span class="text-xs text-slate-500">Serve God's people</span>
+              </div>
+            </div>
+
+            <div class="bg-zedek-navy p-4 mb-6 border-l-2 border-zedek-gold">
+              <p class="text-xs text-slate-400 italic">
+                "We are currently auditing for: Drummers, Bassists, and Spoken
+                Word Artists."
+              </p>
+            </div>
+
+            <a
+              href="https://wa.me/234YOURNUMBER?text=Shalom, I am a creative and I want to audition for the Tribe."
+              target="_blank"
+              class="inline-block w-full text-center bg-zedek-gold text-zedek-navy font-bold py-4 hover:bg-white transition text-xs uppercase tracking-widest shadow-lg"
+            >
+              Apply For Audition
+            </a>
+          </div>
+        </div>
+
+        <div class="mt-16 pt-10 border-t border-white/10">
+          <h3 class="text-xl font-display text-white mb-6">
+            Upcoming Sound Gatherings
+          </h3>
+          <div class="flex flex-col md:flex-row gap-6">
+            <div
+              class="flex-1 bg-zedek-navylight p-6 flex items-center gap-4 hover:bg-white/5 transition"
+            >
+              <div
+                class="bg-zedek-gold text-zedek-navy font-bold p-3 text-center w-16 h-16 flex flex-col justify-center leading-none rounded"
+              >
+                <span class="block text-xs uppercase">Fri</span>
+                <span class="block text-xl">05</span>
+              </div>
+              <div>
+                <h4 class="text-white font-bold">The Upper Room Session</h4>
+                <p class="text-sm text-slate-400">
+                  Monthly worship night. No agenda.
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex-1 bg-zedek-navylight p-6 flex items-center gap-4 hover:bg-white/5 transition"
+            >
+              <div
+                class="bg-gray-700 text-gray-400 font-bold p-3 text-center w-16 h-16 flex flex-col justify-center leading-none rounded"
+              >
+                <span class="block text-xs uppercase">Wed</span>
+                <span class="block text-xl">12</span>
+              </div>
+              <div>
+                <h4 class="text-white font-bold">Musician Discipleship</h4>
+                <p class="text-sm text-slate-400">
+                  Technical training & bible study.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

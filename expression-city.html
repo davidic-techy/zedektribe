@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tribe of Zedek | City Engagement</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              zedek: {
+                gold: "#D4AF37",
+                goldlight: "#F3E5AB",
+                navy: "#0B1120",
+                navylight: "#1E293B",
+                charcoal: "#334155",
+                cream: "#F8FAFC",
+              },
+            },
+            fontFamily: {
+              serif: ["Lora", "serif"],
+              display: ["Cinzel", "serif"],
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .fade-in {
+        animation: fadeIn 0.8s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Pulse Animation for Kairos Moments */
+      .pulse-ring {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
+        animation: pulse-gold 2s infinite cubic-bezier(0.66, 0, 0, 1);
+      }
+      @keyframes pulse-gold {
+        to {
+          box-shadow: 0 0 0 10px rgba(212, 175, 55, 0);
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-zedek-navy text-slate-300 font-sans h-screen flex flex-col md:flex-row overflow-hidden"
+  >
+    <nav
+      class="w-full md:w-64 bg-zedek-navylight border-r border-white/5 flex-shrink-0 flex md:flex-col justify-between z-50 fixed bottom-0 md:relative md:h-full shadow-2xl"
+    >
+      <div class="hidden md:flex flex-col items-center pt-10 px-6 text-center">
+        <div
+          class="w-12 h-12 border-2 border-zedek-gold rotate-45 flex items-center justify-center mb-6"
+        >
+          <span
+            class="text-zedek-gold font-display font-bold text-xl -rotate-45"
+            >Z</span
+          >
+        </div>
+        <h1 class="font-display text-xl text-white tracking-widest">
+          TRIBE OF ZEDEK
+        </h1>
+      </div>
+      <div
+        class="flex md:flex-col justify-around md:justify-start w-full md:w-auto md:px-4 md:mt-10 md:space-y-2 py-3 md:py-0 bg-zedek-navylight/95 backdrop-blur md:bg-transparent border-t border-white/5 md:border-none"
+      >
+        <a
+          href="index.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="crown"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >Mandate</span
+          ></a
+        >
+        <a
+          href="expressions.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg bg-white/5 transition group text-zedek-gold"
+          ><i
+            data-lucide="layers"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 text-zedek-gold"
+          ></i
+          ><span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >Expressions</span
+          ></a
+        >
+        <a
+          href="media.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="book-open"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >Journal</span
+          ></a
+        >
+        <a
+          href="store.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="shopping-bag"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >The Armory</span
+          ></a
+        >
+        <a
+          href="join.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="user-plus"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >Join</span
+          ></a
+        >
+      </div>
+      <div class="hidden md:block p-6 text-center">
+        <p class="text-[10px] text-slate-500 uppercase tracking-widest">
+          &copy; 2026 Tribe of Zedek
+        </p>
+      </div>
+    </nav>
+
+    <main
+      class="flex-1 overflow-y-auto relative no-scrollbar pb-24 md:pb-0 bg-zedek-navy"
+    >
+      <header class="pt-10 px-6 md:px-12 flex items-center gap-4">
+        <a
+          href="expressions.html"
+          class="text-slate-500 hover:text-white transition"
+          ><i data-lucide="arrow-left"></i
+        ></a>
+        <span
+          class="text-zedek-gold text-xs font-bold tracking-widest uppercase"
+          >Expression IV</span
+        >
+      </header>
+
+      <div class="max-w-6xl mx-auto px-6 md:px-12 py-10 fade-in">
+        <div class="mb-16">
+          <h1 class="text-4xl md:text-5xl font-display text-white mb-6">
+            City Engagement
+          </h1>
+
+          <div
+            class="relative bg-gray-900 h-[400px] w-full rounded-sm overflow-hidden mb-8"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop"
+              class="absolute inset-0 w-full h-full object-cover opacity-60"
+            />
+
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-zedek-navy via-transparent to-transparent"
+            ></div>
+
+            <div class="absolute bottom-10 left-6 md:left-12 max-w-2xl">
+              <h2 class="text-3xl font-display text-white mb-4">
+                Faith With Feet.
+              </h2>
+              <p
+                class="text-lg text-slate-200 font-serif italic leading-relaxed"
+              >
+                "The city is our altar. We don't wait for them to come to
+                church; we take the presence to the pavement."
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 mb-20 items-center">
+          <div>
+            <span
+              class="text-zedek-gold text-xs font-bold tracking-widest uppercase block mb-3"
+              >The Strategy</span
+            >
+            <h3 class="text-2xl font-display text-white mb-4">
+              A Holy Enticement
+            </h3>
+            <p class="text-slate-400 leading-relaxed mb-6">
+              We don't do boring charity. We do
+              <strong>Kingdom Invasion</strong>. We enter underserved
+              spaces—slums, streets, and shelters—bringing not just food, but
+              dignity, joy, and the tangible presence of Jesus.<br /><br />
+              It is youthful. It is vibrant. It is a "silent" sermon that people
+              cannot ignore because they can taste and see that the Lord is
+              good.
+            </p>
+          </div>
+          <div
+            class="grid grid-cols-2 gap-px bg-white/10 border border-white/10"
+          >
+            <div
+              class="bg-zedek-navylight p-6 text-center hover:bg-white/5 transition"
+            >
+              <span class="block text-3xl font-bold text-white mb-1">5+</span>
+              <span class="text-xs text-zedek-gold uppercase tracking-widest"
+                >Slums Covered</span
+              >
+            </div>
+            <div
+              class="bg-zedek-navylight p-6 text-center hover:bg-white/5 transition"
+            >
+              <span class="block text-3xl font-bold text-white mb-1">200+</span>
+              <span class="text-xs text-zedek-gold uppercase tracking-widest"
+                >Souls Fed</span
+              >
+            </div>
+            <div
+              class="bg-zedek-navylight p-6 text-center hover:bg-white/5 transition"
+            >
+              <span class="block text-3xl font-bold text-white mb-1">100%</span>
+              <span class="text-xs text-zedek-gold uppercase tracking-widest"
+                >Voluntary</span
+              >
+            </div>
+            <div
+              class="bg-zedek-navylight p-6 text-center hover:bg-white/5 transition"
+            >
+              <span class="block text-3xl font-bold text-white mb-1">∞</span>
+              <span class="text-xs text-zedek-gold uppercase tracking-widest"
+                >Impact</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-20">
+          <div
+            class="flex items-end justify-between border-b border-white/10 pb-4 mb-8"
+          >
+            <h3 class="text-2xl font-display text-white">Our Deployments</h3>
+            <p class="text-xs text-slate-500 uppercase hidden md:block">
+              How we move
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-zedek-navylight p-8 border-t-4 border-slate-600">
+              <div class="flex items-center gap-3 mb-6">
+                <i
+                  data-lucide="calendar-days"
+                  class="text-slate-400 w-6 h-6"
+                ></i>
+                <h4 class="text-white font-bold text-xl">
+                  The Calendar (Fixed)
+                </h4>
+              </div>
+              <p class="text-sm text-slate-400 mb-6">
+                Structured, planned engagements where we mobilize the entire
+                Tribe for massive impact.
+              </p>
+
+              <div class="space-y-4">
+                <div class="flex gap-4 p-4 bg-zedek-navy border border-white/5">
+                  <div class="text-center w-12 pt-1">
+                    <span class="block text-xs text-zedek-gold uppercase"
+                      >Mar</span
+                    >
+                    <span class="block text-lg font-bold text-white">15</span>
+                  </div>
+                  <div>
+                    <h5 class="text-white font-bold text-sm">
+                      The Slum Banquet
+                    </h5>
+                    <p class="text-xs text-slate-500">
+                      Feeding & Medical Checkup • Bodija
+                    </p>
+                  </div>
+                </div>
+                <div class="flex gap-4 p-4 bg-zedek-navy border border-white/5">
+                  <div class="text-center w-12 pt-1">
+                    <span class="block text-xs text-zedek-gold uppercase"
+                      >Apr</span
+                    >
+                    <span class="block text-lg font-bold text-white">22</span>
+                  </div>
+                  <div>
+                    <h5 class="text-white font-bold text-sm">
+                      Charity Walk: Hope Is Here
+                    </h5>
+                    <p class="text-xs text-slate-500">
+                      Awareness & Evangelism • Ibadan
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-zedek-navylight p-8 border-t-4 border-zedek-gold relative overflow-hidden"
+            >
+              <div
+                class="absolute top-4 right-4 w-3 h-3 bg-zedek-gold rounded-full pulse-ring"
+              ></div>
+
+              <div class="flex items-center gap-3 mb-6">
+                <i data-lucide="zap" class="text-zedek-gold w-6 h-6"></i>
+                <h4 class="text-white font-bold text-xl">
+                  Kairos Moments (Spontaneous)
+                </h4>
+              </div>
+              <p class="text-sm text-slate-400 mb-6">
+                Spirit-led, pop-up missions. We respond to immediate needs or
+                divine prompts. These are announced 24-48 hours in advance.
+              </p>
+
+              <div
+                class="bg-zedek-gold/10 border border-zedek-gold/30 p-4 rounded-sm"
+              >
+                <span
+                  class="text-zedek-gold text-[10px] uppercase tracking-widest block mb-2"
+                  >● Active Alert</span
+                >
+                <h5 class="text-white font-bold mb-1">Project: "Cool Water"</h5>
+                <p class="text-xs text-slate-300 mb-3">
+                  Distributing cold water & tracts in traffic gridlock this
+                  Friday.
+                </p>
+                <a
+                  href="https://wa.me/234YOURNUMBER?text=I want to join the Kairos Team for the next pop-up."
+                  class="text-xs text-zedek-gold underline uppercase tracking-widest hover:text-white"
+                  >Join Response Team</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="relative bg-black/30 border border-white/10 p-8 md:p-12 rounded-sm"
+        >
+          <div class="text-center max-w-2xl mx-auto mb-12">
+            <span
+              class="text-zedek-gold text-xs font-bold tracking-widest uppercase block mb-3"
+              >The Supply Line</span
+            >
+            <h3 class="text-3xl font-display text-white mb-4">
+              Fuel The Mission
+            </h3>
+            <p class="text-slate-400">
+              We have the hands and the hearts, but we need the resources.
+              Choose exactly where your seed goes.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-6">
+            <div
+              class="group bg-zedek-navylight p-6 border border-white/5 hover:border-zedek-gold transition text-center"
+            >
+              <div
+                class="w-12 h-12 mx-auto bg-zedek-navy rounded-full flex items-center justify-center mb-4 border border-white/10 group-hover:border-zedek-gold"
+              >
+                <i data-lucide="utensils" class="text-white"></i>
+              </div>
+              <h4 class="text-white font-bold mb-2">Sponsor a Banquet</h4>
+              <p class="text-xs text-slate-500 mb-4 h-10">
+                Feeds 50 children in our next Slum Outreach.
+              </p>
+              <p class="text-xl text-zedek-gold font-display font-bold mb-4">
+                ₦50,000
+              </p>
+              <a
+                href="https://wa.me/234YOURNUMBER?text=Shalom, I want to sponsor a Slum Banquet unit (₦50k)."
+                class="block w-full py-2 border border-slate-600 text-slate-300 text-xs uppercase hover:bg-zedek-gold hover:text-zedek-navy transition"
+              >
+                Give This
+              </a>
+            </div>
+
+            <div
+              class="group bg-zedek-navylight p-6 border border-white/5 hover:border-zedek-gold transition text-center"
+            >
+              <div
+                class="w-12 h-12 mx-auto bg-zedek-navy rounded-full flex items-center justify-center mb-4 border border-white/10 group-hover:border-zedek-gold"
+              >
+                <i data-lucide="truck" class="text-white"></i>
+              </div>
+              <h4 class="text-white font-bold mb-2">Mission Logistics</h4>
+              <p class="text-xs text-slate-500 mb-4 h-10">
+                Supports transportation, sound rental, and permits.
+              </p>
+              <p class="text-xl text-zedek-gold font-display font-bold mb-4">
+                Any Amount
+              </p>
+              <a
+                href="https://wa.me/234YOURNUMBER?text=Shalom, I want to support Mission Logistics."
+                class="block w-full py-2 border border-slate-600 text-slate-300 text-xs uppercase hover:bg-zedek-gold hover:text-zedek-navy transition"
+              >
+                Give This
+              </a>
+            </div>
+
+            <div
+              class="group bg-zedek-navylight p-6 border border-white/5 hover:border-zedek-gold transition text-center"
+            >
+              <div
+                class="w-12 h-12 mx-auto bg-zedek-navy rounded-full flex items-center justify-center mb-4 border border-white/10 group-hover:border-zedek-gold"
+              >
+                <i data-lucide="book" class="text-white"></i>
+              </div>
+              <h4 class="text-white font-bold mb-2">Bibles & Materials</h4>
+              <p class="text-xs text-slate-500 mb-4 h-10">
+                Provides 20 New Believer Kits (Bible + Journal).
+              </p>
+              <p class="text-xl text-zedek-gold font-display font-bold mb-4">
+                ₦100,000
+              </p>
+              <a
+                href="https://wa.me/234YOURNUMBER?text=Shalom, I want to sponsor Bibles and Materials."
+                class="block w-full py-2 border border-slate-600 text-slate-300 text-xs uppercase hover:bg-zedek-gold hover:text-zedek-navy transition"
+              >
+                Give This
+              </a>
+            </div>
+          </div>
+
+          <div class="mt-8 text-center">
+            <p class="text-xs text-slate-500 italic">
+              "He who gives to the poor lends to the Lord." — Proverbs 19:17
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

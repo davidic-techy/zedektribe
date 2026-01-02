@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tribe of Zedek | Join</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              zedek: {
+                gold: "#D4AF37",
+                goldlight: "#F3E5AB",
+                navy: "#0B1120",
+                navylight: "#1E293B",
+                charcoal: "#334155",
+                cream: "#F8FAFC",
+              },
+            },
+            fontFamily: {
+              serif: ["Lora", "serif"],
+              display: ["Cinzel", "serif"],
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .fade-in {
+        animation: fadeIn 0.5s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-zedek-navy text-slate-300 font-sans h-screen flex flex-col md:flex-row overflow-hidden"
+  >
+    <nav
+      class="w-full md:w-64 bg-zedek-navylight border-r border-white/5 flex-shrink-0 flex md:flex-col justify-between z-50 fixed bottom-0 md:relative md:h-full shadow-2xl"
+    >
+      <div class="hidden md:flex flex-col items-center pt-10 px-6 text-center">
+        <div
+          class="w-12 h-12 border-2 border-zedek-gold rotate-45 flex items-center justify-center mb-6"
+        >
+          <span
+            class="text-zedek-gold font-display font-bold text-xl -rotate-45"
+            >Z</span
+          >
+        </div>
+        <h1 class="font-display text-xl text-white tracking-widest">
+          TRIBE OF ZEDEK
+        </h1>
+        <p class="text-xs text-zedek-gold uppercase tracking-[0.2em] mt-2">
+          Est. Righteousness
+        </p>
+      </div>
+
+      <div
+        class="flex md:flex-col justify-around md:justify-start w-full md:w-auto md:px-4 md:mt-10 md:space-y-2 py-3 md:py-0 bg-zedek-navylight/95 backdrop-blur md:bg-transparent border-t border-white/5 md:border-none"
+      >
+        <a
+          href="index.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+        >
+          <i
+            data-lucide="crown"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
+          ></i>
+          <span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >Mandate</span
+          >
+        </a>
+        <a
+          href="expressions.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+        >
+          <i
+            data-lucide="layers"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
+          ></i>
+          <span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >Expressions</span
+          >
+        </a>
+        <a
+          href="media.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+        >
+          <i
+            data-lucide="mic-2"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
+          ></i>
+          <span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >Media</span
+          >
+        </a>
+        <a
+          href="store.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+        >
+          <i
+            data-lucide="shopping-bag"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
+          ></i>
+          <span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >The Armory</span
+          >
+        </a>
+        <a
+          href="join.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+        >
+          <i
+            data-lucide="user-plus"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
+          ></i>
+          <span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >Join</span
+          >
+        </a>
+      </div>
+      <div class="hidden md:block p-6 text-center">
+        <p class="text-[10px] text-slate-500 uppercase tracking-widest">
+          &copy; 2026 Tribe of Zedek
+        </p>
+      </div>
+    </nav>
+
+    <main
+      class="flex-1 overflow-y-auto relative no-scrollbar pb-24 md:pb-0 bg-zedek-navy flex flex-col justify-center items-center px-4"
+    >
+      <header
+        class="absolute top-0 left-0 w-full p-6 flex justify-between items-center z-40 pointer-events-none"
+      >
+        <span
+          class="md:hidden font-display text-zedek-gold font-bold tracking-widest text-lg pointer-events-auto"
+          >TRIBE OF ZEDEK</span
+        >
+      </header>
+
+      <div class="max-w-2xl text-center fade-in">
+        <i
+          data-lucide="door-open"
+          class="w-12 h-12 text-zedek-gold mx-auto mb-6"
+        ></i>
+        <h2 class="text-4xl font-display text-white mb-6">
+          Enter The Formation
+        </h2>
+        <p class="text-lg text-slate-400 font-serif italic mb-10">
+          "You do not need a title to belong here. You only need a hunger for
+          God."
+        </p>
+        <div class="space-y-4">
+          <p class="text-sm text-slate-500">
+            Our intake process helps us place you in the right expression.<br />
+            Click below to begin your profile.
+          </p>
+          <br />
+          <a
+            href="https://forms.gle/jFbns8JBq6PgKLb96"
+            target="_blank"
+            class="inline-block bg-zedek-gold text-zedek-navy font-bold py-4 px-12 rounded hover:bg-white transition duration-300 font-display tracking-widest uppercase text-sm shadow-xl"
+          >
+            Open Intake Form
+          </a>
+        </div>
+      </div>
+    </main>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

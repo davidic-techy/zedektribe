@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tribe of Zedek | Custom Commission</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              zedek: {
+                gold: "#D4AF37",
+                goldlight: "#F3E5AB",
+                navy: "#0B1120",
+                navylight: "#1E293B",
+                charcoal: "#334155",
+                cream: "#F8FAFC",
+              },
+            },
+            fontFamily: {
+              serif: ["Lora", "serif"],
+              display: ["Cinzel", "serif"],
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .fade-in {
+        animation: fadeIn 0.8s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: none;
+        border-color: #d4af37;
+        box-shadow: 0 0 0 1px #d4af37;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-zedek-navy text-slate-300 font-sans h-screen flex flex-col md:flex-row overflow-hidden"
+  >
+    <nav
+      class="w-full md:w-64 bg-zedek-navylight border-r border-white/5 flex-shrink-0 flex md:flex-col justify-between z-50 fixed bottom-0 md:relative md:h-full shadow-2xl"
+    >
+      <div class="hidden md:flex flex-col items-center pt-10 px-6 text-center">
+        <div
+          class="w-12 h-12 border-2 border-zedek-gold rotate-45 flex items-center justify-center mb-6"
+        >
+          <span
+            class="text-zedek-gold font-display font-bold text-xl -rotate-45"
+            >Z</span
+          >
+        </div>
+        <h1 class="font-display text-xl text-white tracking-widest">
+          TRIBE OF ZEDEK
+        </h1>
+      </div>
+      <div
+        class="flex md:flex-col justify-around md:justify-start w-full md:w-auto md:px-4 md:mt-10 md:space-y-2 py-3 md:py-0 bg-zedek-navylight/95 backdrop-blur md:bg-transparent border-t border-white/5 md:border-none"
+      >
+        <a
+          href="index.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="crown"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >Mandate</span
+          ></a
+        >
+        <a
+          href="expressions.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="layers"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >Expressions</span
+          ></a
+        >
+        <a
+          href="media.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="book-open"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >Journal</span
+          ></a
+        >
+        <a
+          href="store.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg bg-white/5 transition group text-zedek-gold"
+          ><i
+            data-lucide="shopping-bag"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 text-zedek-gold"
+          ></i
+          ><span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >The Armory</span
+          ></a
+        >
+        <a
+          href="join.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="user-plus"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >Join</span
+          ></a
+        >
+      </div>
+      <div class="hidden md:block p-6 text-center">
+        <p class="text-[10px] text-slate-500 uppercase tracking-widest">
+          &copy; 2026 Tribe of Zedek
+        </p>
+      </div>
+    </nav>
+
+    <main
+      class="flex-1 overflow-y-auto relative no-scrollbar pb-24 md:pb-0 bg-zedek-navy"
+    >
+      <header class="pt-10 px-6 md:px-12 pb-6 border-b border-white/5">
+        <div
+          class="flex items-center gap-2 text-xs text-slate-500 uppercase tracking-widest mb-4"
+        >
+          <a href="store.html" class="hover:text-zedek-gold">The Armory</a>
+          <span>/</span>
+          <span class="text-white">Custom</span>
+        </div>
+        <h2 class="text-3xl font-display text-white">The Commission</h2>
+        <p class="text-slate-400 text-sm mt-2 font-serif italic">
+          "Your vision. Our standard. Create a customized piece for yourself or
+          your ministry."
+        </p>
+      </header>
+
+      <div
+        class="max-w-5xl mx-auto px-6 md:px-12 py-10 flex flex-col lg:flex-row gap-12"
+      >
+        <div class="lg:w-2/3 fade-in">
+          <form id="customOrderForm" class="space-y-8">
+            <div
+              class="bg-zedek-navylight p-6 border border-white/5 rounded-sm"
+            >
+              <div class="flex items-center gap-3 mb-6">
+                <span
+                  class="bg-zedek-gold text-zedek-navy font-bold w-6 h-6 flex items-center justify-center text-xs rounded-full"
+                  >1</span
+                >
+                <h3 class="text-white font-display text-lg">
+                  Select Your Canvas
+                </h3>
+              </div>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <label class="cursor-pointer">
+                  <input
+                    type="radio"
+                    name="canvas"
+                    value="T-Shirt"
+                    class="peer sr-only"
+                    checked
+                  />
+                  <div
+                    class="border border-slate-600 rounded p-4 text-center hover:bg-white/5 peer-checked:border-zedek-gold peer-checked:text-zedek-gold transition"
+                  >
+                    <i data-lucide="shirt" class="mx-auto mb-2"></i>
+                    <span class="text-xs font-bold uppercase">Tee</span>
+                  </div>
+                </label>
+                <label class="cursor-pointer">
+                  <input
+                    type="radio"
+                    name="canvas"
+                    value="Hoodie"
+                    class="peer sr-only"
+                  />
+                  <div
+                    class="border border-slate-600 rounded p-4 text-center hover:bg-white/5 peer-checked:border-zedek-gold peer-checked:text-zedek-gold transition"
+                  >
+                    <span class="block text-2xl mb-1">🧥</span>
+                    <span class="text-xs font-bold uppercase">Hoodie</span>
+                  </div>
+                </label>
+                <label class="cursor-pointer">
+                  <input
+                    type="radio"
+                    name="canvas"
+                    value="Cap"
+                    class="peer sr-only"
+                  />
+                  <div
+                    class="border border-slate-600 rounded p-4 text-center hover:bg-white/5 peer-checked:border-zedek-gold peer-checked:text-zedek-gold transition"
+                  >
+                    <span class="block text-2xl mb-1">🧢</span>
+                    <span class="text-xs font-bold uppercase">Cap</span>
+                  </div>
+                </label>
+                <label class="cursor-pointer">
+                  <input
+                    type="radio"
+                    name="canvas"
+                    value="Headband"
+                    class="peer sr-only"
+                  />
+                  <div
+                    class="border border-slate-600 rounded p-4 text-center hover:bg-white/5 peer-checked:border-zedek-gold peer-checked:text-zedek-gold transition"
+                  >
+                    <span class="block text-2xl mb-1">🎗️</span>
+                    <span class="text-xs font-bold uppercase">Band</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <div
+              class="bg-zedek-navylight p-6 border border-white/5 rounded-sm"
+            >
+              <div class="flex items-center gap-3 mb-6">
+                <span
+                  class="bg-zedek-gold text-zedek-navy font-bold w-6 h-6 flex items-center justify-center text-xs rounded-full"
+                  >2</span
+                >
+                <h3 class="text-white font-display text-lg">The Inscription</h3>
+              </div>
+
+              <div class="space-y-4">
+                <div>
+                  <label
+                    class="block text-xs text-slate-400 uppercase tracking-widest mb-2"
+                    >Primary Text / Scripture</label
+                  >
+                  <input
+                    type="text"
+                    id="designText"
+                    placeholder="e.g., 'Audacious Faith' or 'Acts 13:36'"
+                    class="w-full bg-zedek-navy border border-slate-600 p-3 text-white placeholder-slate-600 rounded-sm"
+                  />
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label
+                      class="block text-xs text-slate-400 uppercase tracking-widest mb-2"
+                      >Print Style</label
+                    >
+                    <select
+                      id="printStyle"
+                      class="w-full bg-zedek-navy border border-slate-600 p-3 text-white rounded-sm"
+                    >
+                      <option value="Standard Flat">Standard Flat Print</option>
+                      <option value="Puff Print (3D)">
+                        Puff Print (3D Raised)
+                      </option>
+                      <option value="Embroidery">Embroidery (Thread)</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label
+                      class="block text-xs text-slate-400 uppercase tracking-widest mb-2"
+                      >Placement</label
+                    >
+                    <select
+                      id="placement"
+                      class="w-full bg-zedek-navy border border-slate-600 p-3 text-white rounded-sm"
+                    >
+                      <option value="Front Center">Front Center</option>
+                      <option value="Left Chest">Left Chest (Pocket)</option>
+                      <option value="Back Only">Back Only</option>
+                      <option value="Front & Back">
+                        Front & Back (+₦3000)
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-zedek-navylight p-6 border border-white/5 rounded-sm"
+            >
+              <div class="flex items-center gap-3 mb-6">
+                <span
+                  class="bg-zedek-gold text-zedek-navy font-bold w-6 h-6 flex items-center justify-center text-xs rounded-full"
+                  >3</span
+                >
+                <h3 class="text-white font-display text-lg">Specifications</h3>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div>
+                  <label
+                    class="block text-xs text-slate-400 uppercase tracking-widest mb-2"
+                    >Garment Color</label
+                  >
+                  <select
+                    id="color"
+                    class="w-full bg-zedek-navy border border-slate-600 p-3 text-white rounded-sm"
+                  >
+                    <option value="Black">Black</option>
+                    <option value="Navy Blue">Navy Blue</option>
+                    <option value="Charcoal Grey">Charcoal Grey</option>
+                    <option value="White">White</option>
+                    <option value="Olive Green">Olive Green</option>
+                    <option value="Sand/Beige">Sand/Beige</option>
+                  </select>
+                </div>
+                <div>
+                  <label
+                    class="block text-xs text-slate-400 uppercase tracking-widest mb-2"
+                    >Quantity</label
+                  >
+                  <input
+                    type="number"
+                    id="quantity"
+                    value="1"
+                    min="1"
+                    class="w-full bg-zedek-navy border border-slate-600 p-3 text-white rounded-sm"
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block text-xs text-slate-400 uppercase tracking-widest mb-2"
+                    >Size</label
+                  >
+                  <select
+                    id="size"
+                    class="w-full bg-zedek-navy border border-slate-600 p-3 text-white rounded-sm"
+                  >
+                    <option value="S">Small</option>
+                    <option value="M">Medium</option>
+                    <option value="L">Large</option>
+                    <option value="XL">Extra Large</option>
+                    <option value="XXL">XXL</option>
+                    <option value="Mixed (Bulk)">Mixed (Bulk Order)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-zedek-navylight p-6 border border-white/5 rounded-sm"
+            >
+              <div class="flex items-center gap-3 mb-6">
+                <span
+                  class="bg-zedek-gold text-zedek-navy font-bold w-6 h-6 flex items-center justify-center text-xs rounded-full"
+                  >4</span
+                >
+                <h3 class="text-white font-display text-lg">Anything Else?</h3>
+              </div>
+              <textarea
+                id="notes"
+                rows="3"
+                placeholder="Do you have a logo file to send? Do you want a specific font? Tell us here..."
+                class="w-full bg-zedek-navy border border-slate-600 p-3 text-white placeholder-slate-600 rounded-sm"
+              ></textarea>
+            </div>
+
+            <button
+              type="button"
+              onclick="submitCustomOrder()"
+              class="w-full bg-zedek-gold text-zedek-navy font-bold py-4 rounded-sm hover:bg-white transition uppercase tracking-widest shadow-lg flex items-center justify-center gap-3"
+            >
+              <i data-lucide="message-circle" class="w-5 h-5"></i>
+              <span>Send Request via WhatsApp</span>
+            </button>
+          </form>
+        </div>
+
+        <div class="lg:w-1/3 space-y-6">
+          <div class="bg-white/5 p-6 border border-white/10">
+            <h4 class="text-zedek-gold font-display text-lg mb-4">
+              Base Pricing Guide
+            </h4>
+            <ul class="space-y-3 text-sm text-slate-400">
+              <li class="flex justify-between border-b border-white/5 pb-2">
+                <span>Custom Tee</span> <span class="text-white">₦15,000+</span>
+              </li>
+              <li class="flex justify-between border-b border-white/5 pb-2">
+                <span>Custom Hoodie</span>
+                <span class="text-white">₦35,000+</span>
+              </li>
+              <li class="flex justify-between border-b border-white/5 pb-2">
+                <span>Custom Cap</span> <span class="text-white">₦8,000+</span>
+              </li>
+              <li class="flex justify-between border-b border-white/5 pb-2">
+                <span>Bulk Orders (10+)</span>
+                <span class="text-zedek-gold">Discounted</span>
+              </li>
+            </ul>
+            <p class="text-xs text-slate-500 mt-4 italic">
+              Final price depends on print complexity. We will confirm on
+              WhatsApp.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      lucide.createIcons();
+
+      function submitCustomOrder() {
+        // 1. Get Values from the Form
+        const canvas = document.querySelector(
+          'input[name="canvas"]:checked'
+        ).value;
+        const text = document.getElementById("designText").value;
+        const style = document.getElementById("printStyle").value;
+        const placement = document.getElementById("placement").value;
+        const color = document.getElementById("color").value;
+        const qty = document.getElementById("quantity").value;
+        const size = document.getElementById("size").value;
+        const notes = document.getElementById("notes").value; // Get the extra notes
+
+        // 2. Validate basic input
+        if (!text) {
+          alert("Please enter the text or scripture you want on the design.");
+          return;
+        }
+
+        const message =
+          `*COMMISSION REQUEST: CUSTOM ORDER*%0A%0A` +
+          `*Type:* ${canvas}%0A` +
+          `*Inscription:* "${text}"%0A` +
+          `*Print Style:* ${style}%0A` +
+          `*Placement:* ${placement}%0A` +
+          `*Color:* ${color}%0A` +
+          `*Size:* ${size}%0A` +
+          `*Quantity:* ${qty}%0A%0A` +
+          `*Additional Notes:*%0A${notes ? notes : "None"}%0A%0A` +
+          `_I am ready to send reference images/logos if needed._`;
+
+        window.open(whatsappUrl, "_blank");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tribe of Zedek | The Armory</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              zedek: {
+                gold: "#D4AF37",
+                goldlight: "#F3E5AB",
+                navy: "#0B1120",
+                navylight: "#1E293B",
+                charcoal: "#334155",
+                cream: "#F8FAFC",
+              },
+            },
+            fontFamily: {
+              serif: ["Lora", "serif"],
+              display: ["Cinzel", "serif"],
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .fade-in {
+        animation: fadeIn 0.8s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-zedek-navy text-slate-300 font-sans h-screen flex flex-col md:flex-row overflow-hidden selection:bg-zedek-gold selection:text-zedek-navy"
+  >
+    <nav
+      class="w-full md:w-64 bg-zedek-navylight border-r border-white/5 flex-shrink-0 flex md:flex-col justify-between z-50 fixed bottom-0 md:relative md:h-full shadow-2xl"
+    >
+      <div class="hidden md:flex flex-col items-center pt-10 px-6 text-center">
+        <div
+          class="w-12 h-12 border-2 border-zedek-gold rotate-45 flex items-center justify-center mb-6"
+        >
+          <span
+            class="text-zedek-gold font-display font-bold text-xl -rotate-45"
+            >Z</span
+          >
+        </div>
+        <h1 class="font-display text-xl text-white tracking-widest">
+          TRIBE OF ZEDEK
+        </h1>
+      </div>
+      <div
+        class="flex md:flex-col justify-around md:justify-start w-full md:w-auto md:px-4 md:mt-10 md:space-y-2 py-3 md:py-0 bg-zedek-navylight/95 backdrop-blur md:bg-transparent border-t border-white/5 md:border-none"
+      >
+        <a
+          href="index.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="crown"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >Mandate</span
+          ></a
+        >
+        <a
+          href="expressions.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="layers"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >Expressions</span
+          ></a
+        >
+        <a
+          href="media.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="book-open"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >Journal</span
+          ></a
+        >
+        <a
+          href="store.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg bg-white/5 transition group text-zedek-gold"
+          ><i
+            data-lucide="shopping-bag"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 text-zedek-gold"
+          ></i
+          ><span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >The Armory</span
+          ></a
+        >
+        <a
+          href="join.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="user-plus"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >Join</span
+          ></a
+        >
+      </div>
+      <div class="hidden md:block p-6 text-center">
+        <p class="text-[10px] text-slate-500 uppercase tracking-widest">
+          &copy; 2026 Tribe of Zedek
+        </p>
+      </div>
+    </nav>
+
+    <main
+      class="flex-1 overflow-y-auto relative no-scrollbar pb-24 md:pb-0 bg-zedek-navy"
+    >
+      <header class="pt-20 px-6 md:px-12 pb-6 border-b border-white/5">
+        <span
+          class="text-zedek-gold text-xs font-bold tracking-widest uppercase block mb-2"
+          >Visual Stewardship</span
+        >
+        <h2 class="text-4xl font-display text-white">The Armory</h2>
+      </header>
+
+      <div class="px-6 md:px-12 mt-6">
+        <div
+          class="bg-gradient-to-r from-zedek-gold/10 to-transparent border border-zedek-gold/30 p-8 rounded-sm flex flex-col md:flex-row items-center justify-between gap-6"
+        >
+          <div>
+            <h3 class="text-2xl font-display text-white mb-2">
+              Have a Specific Vision?
+            </h3>
+            <p class="text-slate-400 text-sm">
+              Commission a custom design for yourself, your team, or your
+              ministry. We handle the craft, you bring the word.
+            </p>
+          </div>
+          <a
+            href="store-custom.html"
+            class="bg-zedek-gold text-zedek-navy font-bold py-3 px-8 hover:bg-white transition text-xs uppercase tracking-widest whitespace-nowrap shadow-lg"
+          >
+            Start Commission
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="sticky top-0 bg-zedek-navy/95 backdrop-blur z-30 px-6 md:px-12 py-4 border-b border-white/5 flex space-x-6 overflow-x-auto"
+      >
+        <a
+          href="#clothing"
+          class="text-sm font-bold uppercase tracking-widest text-white hover:text-zedek-gold transition whitespace-nowrap"
+          >I. Believers' Clothing</a
+        >
+        <a
+          href="#tools"
+          class="text-sm font-bold uppercase tracking-widest text-slate-500 hover:text-zedek-gold transition whitespace-nowrap"
+          >II. Faith Tools</a
+        >
+        <a
+          href="#ministry"
+          class="text-sm font-bold uppercase tracking-widest text-slate-500 hover:text-zedek-gold transition whitespace-nowrap"
+          >III. Ministry Design</a
+        >
+      </div>
+
+      <section id="clothing" class="px-6 md:px-12 py-16">
+        <div class="max-w-6xl mx-auto">
+          <div class="mb-10 max-w-2xl">
+            <h3 class="text-2xl font-display text-white mb-2">
+              Wear Your Faith
+            </h3>
+            <p class="text-slate-400 font-serif italic">
+              "Clothing that speaks without shouting. Minimal, modern, and
+              rooted in truth."
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="group">
+              <a
+                href="store-tees.html"
+                class="block bg-gray-900 h-96 w-full relative overflow-hidden mb-4 cursor-pointer"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                  class="object-cover w-full h-full opacity-80 group-hover:scale-105 transition duration-500"
+                />
+
+                <div
+                  class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300"
+                >
+                  <span
+                    class="border border-white text-white text-xs uppercase tracking-widest px-4 py-2"
+                    >View Collection</span
+                  >
+                </div>
+              </a>
+
+              <a href="store-tees.html" class="inline-block">
+                <h4
+                  class="text-white font-display text-lg hover:text-zedek-gold transition"
+                >
+                  The 'Quiet Truth' Tee
+                </h4>
+              </a>
+
+              <p class="text-slate-500 text-xs uppercase tracking-widest mb-2">
+                Heavyweight Cotton / Noir
+              </p>
+              <p class="text-zedek-gold font-bold">₦15,000</p>
+            </div>
+
+            <div class="group">
+              <a
+                href="store-hoodies.html"
+                class="block bg-gray-900 h-96 w-full relative overflow-hidden mb-4 cursor-pointer"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                  class="object-cover w-full h-full opacity-70 group-hover:scale-105 transition duration-500"
+                />
+
+                <div
+                  class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300"
+                >
+                  <span
+                    class="border border-white text-white text-xs uppercase tracking-widest px-4 py-2"
+                    >View Hoodies</span
+                  >
+                </div>
+              </a>
+
+              <a href="store-hoodies.html" class="inline-block">
+                <h3
+                  class="text-white font-display text-lg hover:text-zedek-gold transition"
+                >
+                  The 'Acts 13' Hoodie
+                </h3>
+              </a>
+
+              <p class="text-slate-500 text-sm mb-3">Oversized / Charcoal</p>
+              <p class="text-zedek-gold font-bold mb-4">₦35,000</p>
+            </div>
+
+            <div class="group">
+              <a
+                href="store-caps.html"
+                class="block bg-gray-900 h-96 w-full relative overflow-hidden mb-4 cursor-pointer"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                  class="object-cover w-full h-full opacity-80 group-hover:scale-105 transition duration-500"
+                />
+
+                <div
+                  class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300"
+                >
+                  <span
+                    class="border border-white text-white text-xs uppercase tracking-widest px-4 py-2"
+                    >View Headwear</span
+                  >
+                </div>
+              </a>
+
+              <a href="store-caps.html" class="inline-block">
+                <h4
+                  class="text-white font-display text-lg hover:text-zedek-gold transition"
+                >
+                  Disciple Cap
+                </h4>
+              </a>
+
+              <p class="text-slate-500 text-xs uppercase tracking-widest mb-2">
+                Embroidered / Navy
+              </p>
+              <p class="text-zedek-gold font-bold">₦8,000</p>
+            </div>
+
+            <div class="group">
+              <a
+                href="store-headbands.html"
+                class="block bg-gray-900 h-96 w-full relative overflow-hidden mb-4 cursor-pointer"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2070&auto=format&fit=crop"
+                  class="object-cover w-full h-full opacity-60 group-hover:scale-105 transition duration-500"
+                />
+
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <span
+                    class="font-print font-bold text-3xl text-white tracking-widest border-y-2 border-zedek-gold py-2"
+                    >HEADBANDS</span
+                  >
+                </div>
+
+                <div
+                  class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300"
+                >
+                  <span
+                    class="border border-white text-white text-xs uppercase tracking-widest px-4 py-2"
+                    >View Focus Gear</span
+                  >
+                </div>
+              </a>
+
+              <a href="store-headbands.html" class="inline-block">
+                <h4
+                  class="text-white font-display text-lg hover:text-zedek-gold transition"
+                >
+                  Focus Gear Collection
+                </h4>
+              </a>
+              <p class="text-slate-500 text-xs uppercase tracking-widest mb-2">
+                Sweatbands / Bandanas
+              </p>
+              <p class="text-zedek-gold font-bold">From ₦4,500</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div
+        class="h-px bg-gradient-to-r from-transparent via-zedek-gold/30 to-transparent mx-12"
+      ></div>
+
+      <section id="tools" class="px-6 md:px-12 py-16 bg-zedek-navylight/30">
+        <div class="max-w-6xl mx-auto">
+          <div class="mb-10 max-w-2xl">
+            <h3 class="text-2xl font-display text-white mb-2">
+              Designed Bibles & Tools
+            </h3>
+            <p class="text-slate-400 font-serif italic">
+              "Scripture, held with reverence. Tools that invite consistency and
+              depth."
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div
+              class="bg-zedek-navylight p-6 border border-white/5 hover:border-zedek-gold/50 transition group"
+            >
+              <div class="h-48 mb-4 overflow-hidden rounded bg-black">
+                <img
+                  src="https://images.unsplash.com/photo-1544816155-12df9643f363?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                  class="object-cover w-full h-full opacity-70 group-hover:opacity-100 transition"
+                />
+              </div>
+              <h4 class="text-white font-display mb-1">The Zedek Journal</h4>
+              <p class="text-xs text-slate-500 mb-3">Leatherbound / Dot Grid</p>
+              <a
+                href="#"
+                class="text-zedek-gold text-xs uppercase tracking-widest hover:underline"
+                >View Details</a
+              >
+            </div>
+
+            <div
+              class="bg-zedek-navylight p-6 border border-white/5 hover:border-zedek-gold/50 transition group"
+            >
+              <div class="h-48 mb-4 overflow-hidden rounded bg-black">
+                <img
+                  src="https://images.unsplash.com/photo-1455849318743-b2233052fcff?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                  class="object-cover w-full h-full opacity-70 group-hover:opacity-100 transition"
+                />
+              </div>
+              <h4 class="text-white font-display mb-1">Scripture Cards</h4>
+              <p class="text-xs text-slate-500 mb-3">Memory Verse Pack</p>
+              <a
+                href="#"
+                class="text-zedek-gold text-xs uppercase tracking-widest hover:underline"
+                >View Details</a
+              >
+            </div>
+
+            <div
+              class="bg-zedek-navylight p-6 border border-white/5 hover:border-zedek-gold/50 transition group"
+            >
+              <div class="h-48 mb-4 overflow-hidden rounded bg-black">
+                <img
+                  src="https://images.unsplash.com/photo-1512413914633-b5043f4041ea?auto=format&fit=crop&q=80&w=1966"
+                  class="object-cover w-full h-full opacity-70 group-hover:opacity-100 transition"
+                />
+              </div>
+              <h4 class="text-white font-display mb-1">Study Bible</h4>
+              <p class="text-xs text-slate-500 mb-3">Wide Margin / Gold Edge</p>
+              <a
+                href="#"
+                class="text-zedek-gold text-xs uppercase tracking-widest hover:underline"
+                >View Details</a
+              >
+            </div>
+
+            <div
+              class="bg-zedek-navylight p-6 border border-white/5 hover:border-zedek-gold/50 transition group"
+            >
+              <div class="h-48 mb-4 overflow-hidden rounded bg-black">
+                <img
+                  src="https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&q=80&w=1887"
+                  class="object-cover w-full h-full opacity-70 group-hover:opacity-100 transition"
+                />
+              </div>
+              <h4 class="text-white font-display mb-1">Devotional Pen</h4>
+              <p class="text-xs text-slate-500 mb-3">Weighted Metal</p>
+              <a
+                href="#"
+                class="text-zedek-gold text-xs uppercase tracking-widest hover:underline"
+                >View Details</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="ministry"
+        class="relative px-6 md:px-12 py-20 bg-zedek-navy border-t border-white/10"
+      >
+        <div
+          class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12"
+        >
+          <div class="md:w-1/2">
+            <span
+              class="text-zedek-gold text-xs font-bold tracking-widest uppercase block mb-2"
+              >For The Church</span
+            >
+            <h3 class="text-3xl font-display text-white mb-6">
+              Ministry with Excellence
+            </h3>
+            <p class="text-slate-400 leading-relaxed mb-6">
+              We design to support ministry, not overshadow it. Equip your
+              volunteers, welcome your guests, and brand your events with
+              dignity.
+            </p>
+
+            <ul class="space-y-3 mb-8 text-sm text-slate-300">
+              <li class="flex items-center">
+                <i data-lucide="check" class="text-zedek-gold w-4 h-4 mr-3"></i>
+                Volunteer Vests & Lanyards
+              </li>
+              <li class="flex items-center">
+                <i data-lucide="check" class="text-zedek-gold w-4 h-4 mr-3"></i>
+                Welcome Kits & Totebags
+              </li>
+              <li class="flex items-center">
+                <i data-lucide="check" class="text-zedek-gold w-4 h-4 mr-3"></i>
+                Event Branding & ID Systems
+              </li>
+            </ul>
+
+            <a
+              href="https://wa.me/234YOURNUMBER?text=Shalom, I am representing a ministry and would like to discuss design services."
+              class="inline-block bg-white text-zedek-navy font-bold py-3 px-8 hover:bg-zedek-gold transition uppercase text-xs tracking-widest"
+            >
+              Start a Ministry Project
+            </a>
+          </div>
+
+          <div class="md:w-1/2 relative">
+            <div
+              class="absolute -inset-4 border border-zedek-gold/30 rounded-lg"
+            ></div>
+            <img
+              src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+              class="rounded shadow-2xl relative z-10 opacity-80"
+            />
+          </div>
+        </div>
+      </section>
+
+      <footer
+        class="py-10 text-center text-slate-600 text-xs uppercase tracking-widest border-t border-white/5"
+      >
+        <p>Tribe of Zedek &bull; Visual Stewardship Division</p>
+      </footer>
+    </main>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

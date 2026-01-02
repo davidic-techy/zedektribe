@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tribe of Zedek | Headwear Collection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;600&family=Oswald:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              zedek: {
+                gold: "#D4AF37",
+                goldlight: "#F3E5AB",
+                navy: "#0B1120",
+                navylight: "#1E293B",
+                charcoal: "#334155",
+                cream: "#F8FAFC",
+              },
+            },
+            fontFamily: {
+              serif: ["Lora", "serif"],
+              display: ["Cinzel", "serif"],
+              sans: ["Inter", "sans-serif"],
+              print: ["Oswald", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .fade-in {
+        animation: fadeIn 0.8s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* EMBROIDERY EFFECT FOR CAPS */
+      .embroidery-text {
+        color: #e2e2e2;
+        text-shadow: 1px 1px 0px #000, -1px -1px 0px rgba(255, 255, 255, 0.2);
+        filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
+        letter-spacing: 0.1em;
+      }
+      .embroidery-gold {
+        color: #d4af37;
+        text-shadow: 1px 1px 0px #8a701e;
+        filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.8));
+      }
+    </style>
+  </head>
+  <body
+    class="bg-zedek-navy text-slate-300 font-sans h-screen flex flex-col md:flex-row overflow-hidden"
+  >
+    <nav
+      class="w-full md:w-64 bg-zedek-navylight border-r border-white/5 flex-shrink-0 flex md:flex-col justify-between z-50 fixed bottom-0 md:relative md:h-full shadow-2xl"
+    >
+      <div class="hidden md:flex flex-col items-center pt-10 px-6 text-center">
+        <div
+          class="w-12 h-12 border-2 border-zedek-gold rotate-45 flex items-center justify-center mb-6"
+        >
+          <span
+            class="text-zedek-gold font-display font-bold text-xl -rotate-45"
+            >Z</span
+          >
+        </div>
+        <h1 class="font-display text-xl text-white tracking-widest">
+          TRIBE OF ZEDEK
+        </h1>
+      </div>
+      <div
+        class="flex md:flex-col justify-around md:justify-start w-full md:w-auto md:px-4 md:mt-10 md:space-y-2 py-3 md:py-0 bg-zedek-navylight/95 backdrop-blur md:bg-transparent border-t border-white/5 md:border-none"
+      >
+        <a
+          href="index.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="crown"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >Mandate</span
+          ></a
+        >
+        <a
+          href="expressions.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="layers"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >Expressions</span
+          ></a
+        >
+        <a
+          href="media.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="book-open"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >Journal</span
+          ></a
+        >
+        <a
+          href="store.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg bg-white/5 transition group text-zedek-gold"
+          ><i
+            data-lucide="shopping-bag"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 text-zedek-gold"
+          ></i
+          ><span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >The Armory</span
+          ></a
+        >
+        <a
+          href="join.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="user-plus"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >Join</span
+          ></a
+        >
+      </div>
+      <div class="hidden md:block p-6 text-center">
+        <p class="text-[10px] text-slate-500 uppercase tracking-widest">
+          &copy; 2026 Tribe of Zedek
+        </p>
+      </div>
+    </nav>
+
+    <main
+      class="flex-1 overflow-y-auto relative no-scrollbar pb-24 md:pb-0 bg-zedek-navy"
+    >
+      <header class="pt-10 px-6 md:px-12 pb-6 border-b border-white/5">
+        <div
+          class="flex items-center gap-2 text-xs text-slate-500 uppercase tracking-widest mb-4"
+        >
+          <a href="store.html" class="hover:text-zedek-gold">The Armory</a>
+          <span>/</span>
+          <span class="text-white">Headwear</span>
+        </div>
+        <h2 class="text-3xl font-display text-white">Headwear Collection</h2>
+        <p class="text-slate-400 text-sm mt-2 font-serif italic">
+          "Covering. Authority. Identity. Minimalist dad hats and structured
+          caps."
+        </p>
+      </header>
+
+      <div class="max-w-7xl mx-auto px-6 md:px-12 py-10">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div class="group fade-in">
+            <div
+              class="relative bg-gray-800 h-[450px] w-full overflow-hidden rounded-sm mb-6 flex justify-center items-center"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                class="absolute inset-0 w-full h-full object-cover opacity-60"
+              />
+
+              <div
+                class="relative z-10 mt-[-60px] ml-[-20px] transform -rotate-12"
+              >
+                <span
+                  class="block font-print font-bold text-2xl embroidery-text"
+                  >DISCIPLE</span
+                >
+              </div>
+            </div>
+
+            <div class="flex justify-between items-start">
+              <div>
+                <h3
+                  class="text-white font-display text-lg group-hover:text-zedek-gold transition"
+                >
+                  The Disciple Cap
+                </h3>
+                <p
+                  class="text-xs text-slate-500 uppercase tracking-widest mt-1"
+                >
+                  Unstructured / Navy
+                </p>
+              </div>
+              <span class="text-zedek-gold font-bold">₦8,000</span>
+            </div>
+
+            <div class="mt-4 flex gap-2">
+              <a
+                href="https://wa.me/234YOURNUMBER?text=I want to order 'Disciple' Cap"
+                target="_blank"
+                class="w-full text-center bg-white text-zedek-navy font-bold text-xs px-4 py-2 uppercase tracking-widest hover:bg-zedek-gold transition"
+              >
+                Secure Order
+              </a>
+            </div>
+          </div>
+
+          <div class="group fade-in" style="animation-delay: 0.1s">
+            <div
+              class="relative bg-gray-800 h-[450px] w-full overflow-hidden rounded-sm mb-6 flex justify-center items-center"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                class="absolute inset-0 w-full h-full object-cover opacity-60 grayscale"
+              />
+
+              <div
+                class="relative z-10 mt-[-60px] ml-[-20px] transform -rotate-12"
+              >
+                <div
+                  class="w-12 h-12 border-2 border-[#D4AF37] flex items-center justify-center embroidery-gold"
+                >
+                  <span class="font-display font-bold text-2xl text-[#D4AF37]"
+                    >Z</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="flex justify-between items-start">
+              <div>
+                <h3
+                  class="text-white font-display text-lg group-hover:text-zedek-gold transition"
+                >
+                  Signature 'Z' Hat
+                </h3>
+                <p
+                  class="text-xs text-slate-500 uppercase tracking-widest mt-1"
+                >
+                  Black / Gold Thread
+                </p>
+              </div>
+              <span class="text-zedek-gold font-bold">₦8,000</span>
+            </div>
+
+            <div class="mt-4 flex gap-2">
+              <a
+                href="https://wa.me/234YOURNUMBER?text=I want to order 'Signature Z' Cap"
+                target="_blank"
+                class="w-full text-center bg-white text-zedek-navy font-bold text-xs px-4 py-2 uppercase tracking-widest hover:bg-zedek-gold transition"
+              >
+                Secure Order
+              </a>
+            </div>
+          </div>
+
+          <div class="group fade-in" style="animation-delay: 0.2s">
+            <div
+              class="relative bg-gray-800 h-[450px] w-full overflow-hidden rounded-sm mb-6 flex justify-center items-center"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                class="absolute inset-0 w-full h-full object-cover opacity-60 sepia-[.3]"
+              />
+
+              <div
+                class="relative z-10 mt-[-60px] ml-[-20px] transform -rotate-12"
+              >
+                <span
+                  class="block font-print font-bold text-2xl embroidery-text text-white"
+                  >NAZIRITE</span
+                >
+                <span
+                  class="block font-sans text-[8px] uppercase tracking-widest text-center mt-1 text-slate-300"
+                  >Set Apart</span
+                >
+              </div>
+            </div>
+
+            <div class="flex justify-between items-start">
+              <div>
+                <h3
+                  class="text-white font-display text-lg group-hover:text-zedek-gold transition"
+                >
+                  Nazirite Edition
+                </h3>
+                <p
+                  class="text-xs text-slate-500 uppercase tracking-widest mt-1"
+                >
+                  Khaki / White Thread
+                </p>
+              </div>
+              <span class="text-zedek-gold font-bold">₦8,000</span>
+            </div>
+
+            <div class="mt-4 flex gap-2">
+              <a
+                href="https://wa.me/234YOURNUMBER?text=I want to order 'Nazirite' Cap"
+                target="_blank"
+                class="w-full text-center bg-white text-zedek-navy font-bold text-xs px-4 py-2 uppercase tracking-widest hover:bg-zedek-gold transition"
+              >
+                Secure Order
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

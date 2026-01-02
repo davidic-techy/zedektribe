@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tribe of Zedek | Formation & Youth</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              zedek: {
+                gold: "#D4AF37",
+                goldlight: "#F3E5AB",
+                navy: "#0B1120",
+                navylight: "#1E293B",
+                charcoal: "#334155",
+                cream: "#F8FAFC",
+              },
+            },
+            fontFamily: {
+              serif: ["Lora", "serif"],
+              display: ["Cinzel", "serif"],
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .fade-in {
+        animation: fadeIn 0.8s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-zedek-navy text-slate-300 font-sans h-screen flex flex-col md:flex-row overflow-hidden"
+  >
+    <nav
+      class="w-full md:w-64 bg-zedek-navylight border-r border-white/5 flex-shrink-0 flex md:flex-col justify-between z-50 fixed bottom-0 md:relative md:h-full shadow-2xl"
+    >
+      <div class="hidden md:flex flex-col items-center pt-10 px-6 text-center">
+        <div
+          class="w-12 h-12 border-2 border-zedek-gold rotate-45 flex items-center justify-center mb-6"
+        >
+          <span
+            class="text-zedek-gold font-display font-bold text-xl -rotate-45"
+            >Z</span
+          >
+        </div>
+        <h1 class="font-display text-xl text-white tracking-widest">
+          TRIBE OF ZEDEK
+        </h1>
+      </div>
+      <div
+        class="flex md:flex-col justify-around md:justify-start w-full md:w-auto md:px-4 md:mt-10 md:space-y-2 py-3 md:py-0 bg-zedek-navylight/95 backdrop-blur md:bg-transparent border-t border-white/5 md:border-none"
+      >
+        <a
+          href="index.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="crown"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >Mandate</span
+          ></a
+        >
+        <a
+          href="expressions.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg bg-white/5 transition group text-zedek-gold"
+          ><i
+            data-lucide="layers"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 text-zedek-gold"
+          ></i
+          ><span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >Expressions</span
+          ></a
+        >
+        <a
+          href="media.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="book-open"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >Journal</span
+          ></a
+        >
+        <a
+          href="store.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="shopping-bag"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >The Armory</span
+          ></a
+        >
+        <a
+          href="join.html"
+          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="user-plus"
+            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span
+            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            >Join</span
+          ></a
+        >
+      </div>
+      <div class="hidden md:block p-6 text-center">
+        <p class="text-[10px] text-slate-500 uppercase tracking-widest">
+          &copy; 2026 Tribe of Zedek
+        </p>
+      </div>
+    </nav>
+
+    <main
+      class="flex-1 overflow-y-auto relative no-scrollbar pb-24 md:pb-0 bg-zedek-navy"
+    >
+      <header class="pt-10 px-6 md:px-12 flex items-center gap-4">
+        <a
+          href="expressions.html"
+          class="text-slate-500 hover:text-white transition"
+          ><i data-lucide="arrow-left"></i
+        ></a>
+        <span
+          class="text-zedek-gold text-xs font-bold tracking-widest uppercase"
+          >Expression III</span
+        >
+      </header>
+
+      <div class="max-w-6xl mx-auto px-6 md:px-12 py-10 fade-in">
+        <div class="mb-16">
+          <h1 class="text-4xl md:text-5xl font-display text-white mb-6">
+            Formation & Youth
+          </h1>
+
+          <div
+            class="relative bg-gray-900 h-[400px] w-full rounded-sm overflow-hidden mb-8"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop"
+              class="absolute inset-0 w-full h-full object-cover opacity-60"
+            />
+
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-zedek-navy via-transparent to-transparent"
+            ></div>
+
+            <div class="absolute bottom-10 left-6 md:left-12 max-w-2xl">
+              <h2 class="text-3xl font-display text-white mb-4">
+                Roots in Christ. Wings for the World.
+              </h2>
+              <p
+                class="text-lg text-slate-200 font-serif italic leading-relaxed"
+              >
+                "We do not just preach to them; we prepare them. We are raising
+                a generation that is spiritually fiery and professionally
+                excellent."
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 mb-20">
+          <div>
+            <span
+              class="text-zedek-gold text-xs font-bold tracking-widest uppercase block mb-3"
+              >The Philosophy</span
+            >
+            <h3 class="text-2xl font-display text-white mb-4">
+              The Daniel Mandate
+            </h3>
+            <p class="text-slate-400 leading-relaxed mb-6">
+              The church often teaches young people how to pray, but leaves them
+              guessing how to succeed in their careers. We bridge that gap.<br /><br />
+              We believe a young believer should be
+              <strong>10x better</strong> (Daniel 1:20) than their peers in the
+              marketplace, not just in the prayer room. We provide the practical
+              structures to make that happen.
+            </p>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-zedek-navylight p-6 border-t-2 border-zedek-gold">
+              <i data-lucide="book" class="text-white mb-3 w-6 h-6"></i>
+              <h4 class="text-white font-bold">Academic</h4>
+              <p class="text-xs text-slate-500 mt-1">Excellence in study</p>
+            </div>
+            <div class="bg-zedek-navylight p-6 border-t-2 border-zedek-gold">
+              <i data-lucide="briefcase" class="text-white mb-3 w-6 h-6"></i>
+              <h4 class="text-white font-bold">Career</h4>
+              <p class="text-xs text-slate-500 mt-1">Marketplace dominance</p>
+            </div>
+            <div class="bg-zedek-navylight p-6 border-t-2 border-zedek-gold">
+              <i data-lucide="heart" class="text-white mb-3 w-6 h-6"></i>
+              <h4 class="text-white font-bold">Character</h4>
+              <p class="text-xs text-slate-500 mt-1">Integrity & values</p>
+            </div>
+            <div class="bg-zedek-navylight p-6 border-t-2 border-zedek-gold">
+              <i data-lucide="users" class="text-white mb-3 w-6 h-6"></i>
+              <h4 class="text-white font-bold">Network</h4>
+              <p class="text-xs text-slate-500 mt-1">Destiny relationships</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-20">
+          <h3
+            class="text-2xl font-display text-white mb-8 border-b border-white/10 pb-4"
+          >
+            Practical Structures
+          </h3>
+
+          <div class="grid md:grid-cols-3 gap-6">
+            <div
+              class="bg-zedek-navylight group hover:bg-white/5 transition p-8"
+            >
+              <div
+                class="bg-zedek-navy w-12 h-12 flex items-center justify-center rounded-full mb-6 border border-white/10 group-hover:border-zedek-gold transition"
+              >
+                <i data-lucide="rocket" class="text-zedek-gold"></i>
+              </div>
+              <h4 class="text-white font-bold text-lg mb-2">The Launchpad</h4>
+              <p class="text-xs text-zedek-gold uppercase tracking-widest mb-4">
+                Career & Skills
+              </p>
+              <p class="text-sm text-slate-400 leading-relaxed mb-6">
+                Workshops on CV writing, digital skills, public speaking, and
+                financial literacy. We invite industry experts to train our
+                youth.
+              </p>
+            </div>
+
+            <div
+              class="bg-zedek-navylight group hover:bg-white/5 transition p-8"
+            >
+              <div
+                class="bg-zedek-navy w-12 h-12 flex items-center justify-center rounded-full mb-6 border border-white/10 group-hover:border-zedek-gold transition"
+              >
+                <i data-lucide="anchor" class="text-zedek-gold"></i>
+              </div>
+              <h4 class="text-white font-bold text-lg mb-2">The Furnace</h4>
+              <p class="text-xs text-zedek-gold uppercase tracking-widest mb-4">
+                Spiritual Roots
+              </p>
+              <p class="text-sm text-slate-400 leading-relaxed mb-6">
+                Before they fly, they must root. Deep bible study, prayer
+                retreats, and apologetics so they can defend their faith in
+                universities.
+              </p>
+            </div>
+
+            <div
+              class="bg-zedek-navylight group hover:bg-white/5 transition p-8"
+            >
+              <div
+                class="bg-zedek-navy w-12 h-12 flex items-center justify-center rounded-full mb-6 border border-white/10 group-hover:border-zedek-gold transition"
+              >
+                <i data-lucide="lightbulb" class="text-zedek-gold"></i>
+              </div>
+              <h4 class="text-white font-bold text-lg mb-2">The Incubator</h4>
+              <p class="text-xs text-zedek-gold uppercase tracking-widest mb-4">
+                Mentorship
+              </p>
+              <p class="text-sm text-slate-400 leading-relaxed mb-6">
+                Pairing young believers with established professionals in the
+                Tribe. One-on-one guidance to navigate life's decisions.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="relative bg-gradient-to-br from-zedek-navylight to-zedek-navy border border-zedek-gold/30 p-8 md:p-12 rounded-sm overflow-hidden"
+        >
+          <div
+            class="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-zedek-gold/5 rounded-full blur-3xl"
+          ></div>
+
+          <div
+            class="relative z-10 flex flex-col md:flex-row gap-12 items-center"
+          >
+            <div class="md:w-2/3">
+              <div class="flex items-center gap-2 mb-4">
+                <i data-lucide="heart-handshake" class="text-zedek-gold"></i>
+                <span
+                  class="text-zedek-gold font-bold text-sm uppercase tracking-widest"
+                  >Vision Partner</span
+                >
+              </div>
+              <h3 class="text-3xl font-display text-white mb-4">
+                Invest in a Generation
+              </h3>
+              <p class="text-slate-300 leading-relaxed mb-6">
+                We have the structure, but we need the fuel. Your partnership
+                helps us provide scholarships, buy tools for skills acquisition,
+                host career seminars, and create a safe haven for young
+                believers.
+              </p>
+              <p
+                class="text-slate-400 text-sm italic border-l-2 border-zedek-gold pl-4"
+              >
+                "When you sponsor this vision, you are not just giving money.
+                You are buying the future for a young person."
+              </p>
+            </div>
+
+            <div class="md:w-1/3 w-full">
+              <div class="bg-zedek-navy p-6 border border-white/10 shadow-2xl">
+                <h4 class="text-white font-bold mb-4">Become a Partner</h4>
+                <div class="space-y-3 mb-6">
+                  <a
+                    href="https://wa.me/234YOURNUMBER?text=Shalom, I want to sponsor a Student's Training."
+                    class="block w-full text-center py-3 border border-slate-600 text-slate-300 text-xs uppercase hover:border-zedek-gold hover:text-white transition"
+                  >
+                    Sponsor Training
+                  </a>
+                  <a
+                    href="https://wa.me/234YOURNUMBER?text=Shalom, I want to partner with the Youth Expression monthly."
+                    class="block w-full text-center py-3 border border-slate-600 text-slate-300 text-xs uppercase hover:border-zedek-gold hover:text-white transition"
+                  >
+                    Monthly Partner
+                  </a>
+                  <a
+                    href="https://wa.me/234YOURNUMBER?text=Shalom, I would like to offer Mentorship to the youth."
+                    class="block w-full text-center py-3 border border-slate-600 text-slate-300 text-xs uppercase hover:border-zedek-gold hover:text-white transition"
+                  >
+                    Volunteer as Mentor
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
