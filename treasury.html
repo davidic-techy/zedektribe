@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tribe of Zedek | The Treasury</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              zedek: {
+                gold: "#D4AF37",
+                goldlight: "#F3E5AB",
+                navy: "#0B1120",
+                navylight: "#1E293B",
+                charcoal: "#334155",
+                cream: "#F8FAFC",
+              },
+            },
+            fontFamily: {
+              serif: ["Lora", "serif"],
+              display: ["Cinzel", "serif"],
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .fade-in {
+        animation: fadeIn 0.8s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .gold-glow {
+        box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-zedek-navy text-slate-300 font-sans h-screen flex flex-col md:flex-row overflow-hidden"
+  >
+    <nav
+      class="hidden md:flex w-64 bg-zedek-navylight border-r border-white/5 flex-col justify-between z-50 h-full shadow-2xl fixed left-0 top-0 overflow-y-auto no-scrollbar"
+    >
+      <div class="flex flex-col items-center pt-10 px-6 text-center">
+        <div
+          class="w-12 h-12 border-2 border-zedek-gold rotate-45 flex items-center justify-center mb-6"
+        >
+          <span
+            class="text-zedek-gold font-display font-bold text-xl -rotate-45"
+            >Z</span
+          >
+        </div>
+        <h1 class="font-display text-xl text-white tracking-widest">
+          TRIBE OF ZEDEK
+        </h1>
+        <p class="text-xs text-zedek-gold uppercase tracking-[0.2em] mt-2">
+          Est. Righteousness
+        </p>
+      </div>
+
+      <div class="w-full px-4 mt-10 space-y-2 flex-1">
+        <a
+          href="index.html"
+          class="flex items-center px-4 py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="crown"
+            class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span class="text-sm uppercase tracking-wider font-medium"
+            >Mandate</span
+          ></a
+        >
+
+        <a
+          href="expressions.html"
+          class="flex items-center px-4 py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="layers"
+            class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span class="text-sm uppercase tracking-wider font-medium"
+            >Expressions</span
+          ></a
+        >
+
+        <a
+          href="first-steps.html"
+          class="flex items-center px-4 py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="footprints"
+            class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span class="text-sm uppercase tracking-wider font-medium"
+            >First Steps</span
+          ></a
+        >
+
+        <a
+          href="media.html"
+          class="flex items-center px-4 py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="book-open"
+            class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span class="text-sm uppercase tracking-wider font-medium"
+            >Journal</span
+          ></a
+        >
+
+        <!-- <a
+          href="stewardship.html"
+          class="flex items-center px-4 py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="users"
+            class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span class="text-sm uppercase tracking-wider font-medium"
+            >Stewardship</span
+          ></a
+        > -->
+        <a
+          href="treasury.html"
+          class="flex items-center px-4 py-3 rounded-lg bg-white/5 transition group text-zedek-gold"
+          ><i
+            data-lucide="landmark"
+            class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span class="text-sm uppercase tracking-wider font-medium"
+            >The Treasury</span
+          ></a
+        >
+        <a
+          href="chronicles.html"
+          class="flex items-center px-4 py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="scroll"
+            class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span class="text-sm uppercase tracking-wider font-medium"
+            >Chronicles</span
+          ></a
+        >
+        <a
+          href="timeline.html"
+          class="flex items-center px-4 py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="calendar"
+            class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span class="text-sm uppercase tracking-wider font-medium"
+            >Timeline</span
+          ></a
+        >
+
+        <a
+          href="store.html"
+          class="flex items-center px-4 py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="shopping-bag"
+            class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span class="text-sm uppercase tracking-wider font-medium"
+            >The Armoury</span
+          ></a
+        >
+        <a
+          href="join.html"
+          class="flex items-center px-4 py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="user-plus"
+            class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span class="text-sm uppercase tracking-wider font-medium"
+            >Join</span
+          ></a
+        >
+      </div>
+      <div class="p-6 text-center">
+        <p class="text-[10px] text-slate-500 uppercase tracking-widest">
+          &copy; 2026 Tribe of Zedek
+        </p>
+      </div>
+    </nav>
+
+    <nav
+      class="md:hidden fixed bottom-0 w-full bg-zedek-navylight border-t border-white/5 z-50 flex justify-around py-3 px-2 shadow-2xl"
+    >
+      <a
+        href="index.html"
+        class="flex flex-col items-center text-slate-400 hover:text-zedek-gold"
+        ><i data-lucide="crown" class="w-5 h-5 mb-1"></i
+        ><span class="text-[9px] uppercase tracking-widest">Mandate</span></a
+      >
+      <a
+        href="expressions.html"
+        class="flex flex-col items-center text-slate-400 hover:text-zedek-gold"
+        ><i data-lucide="layers" class="w-5 h-5 mb-1"></i
+        ><span class="text-[9px] uppercase tracking-widest"
+          >Expressions</span
+        ></a
+      >
+      <a
+        href="media.html"
+        class="flex flex-col items-center text-slate-400 hover:text-zedek-gold"
+        ><i data-lucide="book-open" class="w-5 h-5 mb-1"></i
+        ><span class="text-[9px] uppercase tracking-widest">Journal</span></a
+      >
+      <a
+        href="store.html"
+        class="flex flex-col items-center text-slate-400 hover:text-zedek-gold"
+        ><i data-lucide="shopping-bag" class="w-5 h-5 mb-1"></i
+        ><span class="text-[9px] uppercase tracking-widest">Armoury</span></a
+      >
+      <a
+        href="join.html"
+        class="flex flex-col items-center text-slate-400 hover:text-zedek-gold"
+        ><i data-lucide="user-plus" class="w-5 h-5 mb-1"></i
+        ><span class="text-[9px] uppercase tracking-widest">Join</span></a
+      >
+    </nav>
+
+    <div
+      class="md:hidden fixed top-0 w-full p-4 flex justify-between items-center z-40 bg-zedek-navy/90 backdrop-blur border-b border-white/5"
+    >
+      <span
+        class="font-display text-zedek-gold font-bold tracking-widest text-lg"
+        >TRIBE OF ZEDEK</span
+      >
+      <button
+        onclick="toggleMobileMenu()"
+        class="text-white hover:text-zedek-gold transition"
+      >
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <div
+      id="mobileMenu"
+      class="fixed inset-0 bg-zedek-navy z-[60] hidden flex-col justify-center items-center opacity-0 transition-opacity duration-300"
+    >
+      <button
+        onclick="toggleMobileMenu()"
+        class="absolute top-6 right-6 text-slate-400 hover:text-white"
+      >
+        <i data-lucide="x" class="w-8 h-8"></i>
+      </button>
+
+      <div class="text-center space-y-6 max-h-[80vh] overflow-y-auto px-6">
+        <span
+          class="text-zedek-gold text-xs uppercase tracking-[0.3em] block mb-2 opacity-50"
+          >Main Directory</span
+        >
+
+        <!-- <a
+          href="stewardship.html"
+          class="block text-xl font-display text-white hover:text-zedek-gold transition"
+          >The Stewardship</a
+        > -->
+        <a
+          href="treasury.html"
+          class="block text-xl font-display text-white hover:text-zedek-gold transition"
+          >Partnership & Giving</a
+        >
+        <a
+          href="chronicles.html"
+          class="block text-xl font-display text-white hover:text-zedek-gold transition"
+          >Impact Reports</a
+        >
+        <a
+          href="first-steps.html"
+          class="block text-xl font-display text-white hover:text-zedek-gold transition"
+          >New Believers</a
+        >
+        <a
+          href="timeline.html"
+          class="block text-xl font-display text-white hover:text-zedek-gold transition"
+          >Calendar & Events</a
+        >
+
+        <div class="w-12 h-px bg-white/20 mx-auto my-6"></div>
+
+        <span
+          class="text-zedek-gold text-xs uppercase tracking-[0.3em] block mb-2 opacity-50"
+          >Quick Links</span
+        >
+        <a
+          href="expressions.html"
+          class="block text-sm text-slate-400 hover:text-white mb-2"
+          >Expressions</a
+        >
+        <a
+          href="media.html"
+          class="block text-sm text-slate-400 hover:text-white mb-2"
+          >The Journal</a
+        >
+        <a
+          href="store.html"
+          class="block text-sm text-slate-400 hover:text-white mb-6"
+          >The Armoury</a
+        >
+
+        <a
+          href="https://wa.me/2349035010746"
+          class="inline-block text-sm text-zedek-navy bg-zedek-gold font-bold uppercase tracking-widest border border-zedek-gold px-8 py-3 rounded hover:bg-white transition"
+        >
+          Contact Leadership
+        </a>
+      </div>
+    </div>
+    <main
+      class="flex-1 overflow-y-auto relative no-scrollbar pb-24 md:pb-0 pt-20 px-4 md:px-12 bg-zedek-navy md:ml-64"
+    >
+      <div class="max-w-5xl mx-auto fade-in mt-6 md:mt-10">
+        <div class="text-center mb-12">
+          <span
+            class="text-zedek-gold text-xs font-bold tracking-widest uppercase block mb-4"
+            >Kingdom Investment</span
+          >
+          <h1 class="text-3xl md:text-5xl font-display text-white mb-6">
+            The Treasury
+          </h1>
+          <p
+            class="text-slate-400 font-serif italic max-w-2xl mx-auto leading-relaxed"
+          >
+            "For where your treasure is, there your heart will be also." —
+            Matthew 6:21
+          </p>
+        </div>
+
+        <div
+          class="bg-zedek-navylight/50 p-6 md:p-8 rounded-sm border-l-4 border-zedek-gold mb-16 max-w-3xl mx-auto"
+        >
+          <h3 class="text-white font-bold mb-2">A Note on Honor</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            We do not take your seed lightly. Every Naira given to this mandate
+            is treated as a sacred trust. It goes directly into the expansion of
+            the Kingdom—fueling outreaches, sustaining the sanctuary, and
+            training the next generation. We are stewards, not owners.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+          <div
+            class="bg-zedek-navylight p-8 border border-white/5 hover:border-zedek-gold transition group text-center rounded-sm"
+          >
+            <div
+              class="w-16 h-16 bg-zedek-navy rounded-full flex items-center justify-center mb-6 mx-auto border border-white/10 group-hover:border-zedek-gold"
+            >
+              <i data-lucide="infinity" class="text-zedek-gold w-8 h-8"></i>
+            </div>
+            <h3 class="text-xl text-white font-display mb-2">
+              Covenant Partner
+            </h3>
+            <p class="text-xs text-slate-500 mb-6 min-h-[40px]">
+              Commit to a monthly seed to sustain the fire on the altar.
+            </p>
+            <button
+              onclick="scrollToBank()"
+              class="w-full border border-slate-600 text-white py-3 text-xs uppercase tracking-widest hover:bg-zedek-gold hover:border-zedek-gold hover:text-zedek-navy transition"
+            >
+              Become a Partner
+            </button>
+          </div>
+
+          <div
+            class="bg-zedek-navylight p-8 border border-white/5 hover:border-zedek-gold transition group text-center rounded-sm gold-glow relative transform md:-translate-y-4"
+          >
+            <div
+              class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-zedek-gold text-zedek-navy text-[10px] font-bold px-3 py-1 uppercase tracking-widest rounded-full"
+            >
+              Primary
+            </div>
+            <div
+              class="w-16 h-16 bg-zedek-navy rounded-full flex items-center justify-center mb-6 mx-auto border border-white/10 group-hover:border-zedek-gold"
+            >
+              <i data-lucide="wheat" class="text-zedek-gold w-8 h-8"></i>
+            </div>
+            <h3 class="text-xl text-white font-display mb-2">
+              Tithes & Offering
+            </h3>
+            <p class="text-xs text-slate-500 mb-6 min-h-[40px]">
+              Honoring God with the firstfruits of your increase.
+            </p>
+            <button
+              onclick="scrollToBank()"
+              class="w-full bg-zedek-gold text-zedek-navy font-bold py-3 text-xs uppercase tracking-widest hover:bg-white transition"
+            >
+              Give Honor
+            </button>
+          </div>
+
+          <div
+            class="bg-zedek-navylight p-8 border border-white/5 hover:border-zedek-gold transition group text-center rounded-sm"
+          >
+            <div
+              class="w-16 h-16 bg-zedek-navy rounded-full flex items-center justify-center mb-6 mx-auto border border-white/10 group-hover:border-zedek-gold"
+            >
+              <i data-lucide="hammer" class="text-zedek-gold w-8 h-8"></i>
+            </div>
+            <h3 class="text-xl text-white font-display mb-2">Projects</h3>
+            <p class="text-xs text-slate-500 mb-6 min-h-[40px]">
+              Specific giving towards City Outreach, Equipment, or Building.
+            </p>
+            <button
+              onclick="scrollToBank()"
+              class="w-full border border-slate-600 text-white py-3 text-xs uppercase tracking-widest hover:bg-zedek-gold hover:border-zedek-gold hover:text-zedek-navy transition"
+            >
+              Support Build
+            </button>
+          </div>
+        </div>
+
+        <div id="bankSection" class="max-w-3xl mx-auto mb-20">
+          <div class="flex items-center gap-4 mb-8">
+            <h3 class="text-2xl font-display text-white">The Supply Lines</h3>
+            <div class="h-px bg-white/10 flex-1"></div>
+          </div>
+
+          <div
+            class="bg-gradient-to-r from-zedek-navylight to-zedek-navy border border-zedek-gold/30 p-8 rounded-lg relative overflow-hidden mb-6 group"
+          >
+            <div
+              class="absolute right-[-20px] bottom-[-20px] opacity-5 text-white"
+            >
+              <i data-lucide="landmark" class="w-48 h-48"></i>
+            </div>
+
+            <div
+              class="relative z-10 flex flex-col md:flex-row justify-between items-center gap-6"
+            >
+              <div class="text-center md:text-left">
+                <p
+                  class="text-xs text-zedek-gold uppercase tracking-widest mb-1"
+                >
+                  Naira Account (NGN)
+                </p>
+                <h4
+                  class="text-2xl font-display text-white font-bold tracking-wider mb-1"
+                >
+                  TRIBE OF ZEDEK
+                </h4>
+                <p class="text-sm text-slate-400">Coming Soon</p>
+              </div>
+
+              <div
+                class="bg-black/30 p-4 rounded border border-white/10 flex items-center gap-4 cursor-pointer hover:bg-black/50 transition"
+                onclick="copyToClipboard('1234567890')"
+              >
+                <span
+                  class="text-xl font-mono text-white tracking-widest"
+                  id="accountNumber"
+                  >1234567890</span
+                >
+                <i data-lucide="copy" class="text-zedek-gold w-5 h-5"></i>
+              </div>
+            </div>
+            <div
+              id="toast"
+              class="absolute top-4 right-4 bg-zedek-gold text-zedek-navy text-[10px] font-bold px-3 py-1 rounded opacity-0 transition duration-300"
+            >
+              COPIED
+            </div>
+          </div>
+
+          <div class="text-center">
+            <p class="text-sm text-slate-500 mb-4">
+              Giving from outside Nigeria? Use our secure gateway.
+            </p>
+            <a
+              href="#"
+              class="inline-flex items-center gap-2 text-white border-b border-zedek-gold pb-1 hover:text-zedek-gold transition text-xs uppercase tracking-widest"
+            >
+              Give via Paystack / Flutterwave
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20 border-t border-white/10 pt-12"
+        >
+          <div>
+            <h3 class="text-xl font-display text-white mb-4">
+              The Integrity of the House
+            </h3>
+            <p class="text-sm text-slate-400 leading-relaxed mb-4">
+              We believe that how we handle money is a test of our spiritual
+              authority. We maintain open books for our partners and operate
+              with a structured budget.
+            </p>
+            <ul class="space-y-2 text-sm text-slate-500">
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-zedek-gold"></i> No
+                personal withdrawals by leadership.
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-zedek-gold"></i>
+                Quarterly financial review by the Council.
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-zedek-gold"></i> 10%
+                of all income goes to external missions.
+              </li>
+            </ul>
+          </div>
+          <div class="bg-zedek-navylight p-6 rounded-sm">
+            <p
+              class="text-xs text-center text-slate-500 mb-4 uppercase tracking-widest"
+            >
+              2026 Resource Allocation
+            </p>
+            <div class="space-y-3">
+              <div>
+                <div class="flex justify-between text-xs text-white mb-1">
+                  <span>Missions & City Outreach</span><span>40%</span>
+                </div>
+                <div class="w-full bg-slate-800 h-2 rounded-full">
+                  <div
+                    class="bg-zedek-gold h-2 rounded-full"
+                    style="width: 40%"
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-xs text-white mb-1">
+                  <span>Ministry Operations & Media</span><span>35%</span>
+                </div>
+                <div class="w-full bg-slate-800 h-2 rounded-full">
+                  <div
+                    class="bg-slate-500 h-2 rounded-full"
+                    style="width: 35%"
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-xs text-white mb-1">
+                  <span>Youth Formation & Training</span><span>25%</span>
+                </div>
+                <div class="w-full bg-slate-800 h-2 rounded-full">
+                  <div
+                    class="bg-slate-600 h-2 rounded-full"
+                    style="width: 25%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center pb-12">
+          <i
+            data-lucide="hands-praying"
+            class="w-8 h-8 text-zedek-gold mx-auto mb-4 opacity-70"
+          ></i>
+          <p class="text-lg text-white font-serif italic max-w-xl mx-auto">
+            "May the Lord remember all your offerings and accept your burnt
+            sacrifice. May He grant you according to your heart's desire and
+            fulfill all your purpose." — Psalm 20:3-4
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      lucide.createIcons();
+
+      // Mobile Menu Toggle
+      function toggleMobileMenu() {
+        const menu = document.getElementById("mobileMenu");
+        if (menu.classList.contains("hidden")) {
+          menu.classList.remove("hidden");
+          setTimeout(() => {
+            menu.classList.remove("opacity-0");
+            menu.classList.add("opacity-100");
+          }, 10);
+        } else {
+          menu.classList.remove("opacity-100");
+          menu.classList.add("opacity-0");
+          setTimeout(() => {
+            menu.classList.add("hidden");
+          }, 300);
+        }
+      }
+
+      // Smooth Scroll to Bank Section
+      function scrollToBank() {
+        document
+          .getElementById("bankSection")
+          .scrollIntoView({ behavior: "smooth" });
+      }
+
+      // Copy to Clipboard Function
+      function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(() => {
+          const toast = document.getElementById("toast");
+          toast.classList.remove("opacity-0");
+          setTimeout(() => {
+            toast.classList.add("opacity-0");
+          }, 2000);
+        });
+      }
+    </script>
+  </body>
+</html>
