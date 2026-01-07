@@ -37,10 +37,6 @@
       .no-scrollbar::-webkit-scrollbar {
         display: none;
       }
-      .no-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
       .fade-in {
         animation: fadeIn 0.5s ease-in-out;
       }
@@ -60,9 +56,9 @@
     class="bg-zedek-navy text-slate-300 font-sans h-screen flex flex-col md:flex-row overflow-hidden"
   >
     <nav
-      class="w-full md:w-64 bg-zedek-navylight border-r border-white/5 flex-shrink-0 flex md:flex-col justify-between z-50 fixed bottom-0 md:relative md:h-full shadow-2xl"
+      class="hidden md:flex w-64 bg-zedek-navylight border-r border-white/5 flex-col justify-between z-50 h-full shadow-2xl fixed left-0 top-0 overflow-y-auto no-scrollbar"
     >
-      <div class="hidden md:flex flex-col items-center pt-10 px-6 text-center">
+      <div class="flex flex-col items-center pt-10 px-6 text-center">
         <div
           class="w-12 h-12 border-2 border-zedek-gold rotate-45 flex items-center justify-center mb-6"
         >
@@ -79,94 +75,251 @@
         </p>
       </div>
 
-      <div
-        class="flex md:flex-col justify-around md:justify-start w-full md:w-auto md:px-4 md:mt-10 md:space-y-2 py-3 md:py-0 bg-zedek-navylight/95 backdrop-blur md:bg-transparent border-t border-white/5 md:border-none"
-      >
+      <div class="w-full px-4 mt-10 space-y-2 flex-1">
         <a
           href="index.html"
-          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
-        >
-          <i
+          class="flex items-center px-4 py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
             data-lucide="crown"
-            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
-          ></i>
-          <span
-            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span class="text-sm uppercase tracking-wider font-medium"
             >Mandate</span
-          >
-        </a>
+          ></a
+        >
+
         <a
           href="expressions.html"
-          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
-        >
-          <i
+          class="flex items-center px-4 py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
             data-lucide="layers"
-            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
-          ></i>
-          <span
-            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span class="text-sm uppercase tracking-wider font-medium"
             >Expressions</span
-          >
-        </a>
+          ></a
+        >
+
+        <a
+          href="first-steps.html"
+          class="flex items-center px-4 py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="footprints"
+            class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span class="text-sm uppercase tracking-wider font-medium"
+            >First Steps</span
+          ></a
+        >
+
         <a
           href="media.html"
-          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          class="flex items-center px-4 py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="book-open"
+            class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span class="text-sm uppercase tracking-wider font-medium"
+            >Journal</span
+          ></a
         >
-          <i
-            data-lucide="mic-2"
-            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
-          ></i>
-          <span
-            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
-            >Media</span
-          >
-        </a>
+
+        <!-- <a
+          href="stewardship.html"
+          class="flex items-center px-4 py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="users"
+            class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span class="text-sm uppercase tracking-wider font-medium"
+            >Stewardship</span
+          ></a
+        > -->
+        <a
+          href="treasury.html"
+          class="flex items-center px-4 py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="landmark"
+            class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span class="text-sm uppercase tracking-wider font-medium"
+            >The Treasury</span
+          ></a
+        >
+        <a
+          href="chronicles.html"
+          class="flex items-center px-4 py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="scroll"
+            class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span class="text-sm uppercase tracking-wider font-medium"
+            >Chronicles</span
+          ></a
+        >
+        <a
+          href="timeline.html"
+          class="flex items-center px-4 py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="calendar"
+            class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span class="text-sm uppercase tracking-wider font-medium"
+            >Timeline</span
+          ></a
+        >
+
         <a
           href="store.html"
-          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
-        >
-          <i
+          class="flex items-center px-4 py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
             data-lucide="shopping-bag"
-            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
-          ></i>
-          <span
-            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
-            >The Armory</span
-          >
-        </a>
+            class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span class="text-sm uppercase tracking-wider font-medium"
+            >The Armoury</span
+          ></a
+        >
         <a
           href="join.html"
-          class="flex flex-col md:flex-row items-center md:px-4 md:py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
-        >
-          <i
+          class="flex items-center px-4 py-3 rounded-lg bg-white/5 transition group text-zedek-gold"
+          ><i
             data-lucide="user-plus"
-            class="w-5 h-5 mb-1 md:mb-0 md:mr-3 group-hover:text-zedek-gold transition"
-          ></i>
-          <span
-            class="text-[10px] md:text-sm uppercase tracking-wider font-medium"
+            class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span class="text-sm uppercase tracking-wider font-medium"
             >Join</span
-          >
-        </a>
+          ></a
+        >
       </div>
-      <div class="hidden md:block p-6 text-center">
+      <div class="p-6 text-center">
         <p class="text-[10px] text-slate-500 uppercase tracking-widest">
           &copy; 2026 Tribe of Zedek
         </p>
       </div>
     </nav>
 
-    <main
-      class="flex-1 overflow-y-auto relative no-scrollbar pb-24 md:pb-0 bg-zedek-navy flex flex-col justify-center items-center px-4"
+    <nav
+      class="md:hidden fixed bottom-0 w-full bg-zedek-navylight border-t border-white/5 z-50 flex justify-around py-3 px-2 shadow-2xl"
     >
-      <header
-        class="absolute top-0 left-0 w-full p-6 flex justify-between items-center z-40 pointer-events-none"
+      <a
+        href="index.html"
+        class="flex flex-col items-center text-slate-400 hover:text-zedek-gold"
+        ><i data-lucide="crown" class="w-5 h-5 mb-1"></i
+        ><span class="text-[9px] uppercase tracking-widest">Mandate</span></a
       >
-        <span
-          class="md:hidden font-display text-zedek-gold font-bold tracking-widest text-lg pointer-events-auto"
-          >TRIBE OF ZEDEK</span
-        >
-      </header>
+      <a
+        href="expressions.html"
+        class="flex flex-col items-center text-slate-400 hover:text-zedek-gold"
+        ><i data-lucide="layers" class="w-5 h-5 mb-1"></i
+        ><span class="text-[9px] uppercase tracking-widest"
+          >Expressions</span
+        ></a
+      >
+      <a
+        href="media.html"
+        class="flex flex-col items-center text-slate-400 hover:text-zedek-gold"
+        ><i data-lucide="book-open" class="w-5 h-5 mb-1"></i
+        ><span class="text-[9px] uppercase tracking-widest">Journal</span></a
+      >
+      <a
+        href="store.html"
+        class="flex flex-col items-center text-slate-400 hover:text-zedek-gold"
+        ><i data-lucide="shopping-bag" class="w-5 h-5 mb-1"></i
+        ><span class="text-[9px] uppercase tracking-widest">Armoury</span></a
+      >
+      <a href="join.html" class="flex flex-col items-center text-zedek-gold"
+        ><i data-lucide="user-plus" class="w-5 h-5 mb-1"></i
+        ><span class="text-[9px] uppercase tracking-widest">Join</span></a
+      >
+    </nav>
 
+    <div
+      class="md:hidden fixed top-0 w-full p-4 flex justify-between items-center z-40 bg-zedek-navy/90 backdrop-blur border-b border-white/5"
+    >
+      <span
+        class="font-display text-zedek-gold font-bold tracking-widest text-lg"
+        >TRIBE OF ZEDEK</span
+      >
+      <button
+        onclick="toggleMobileMenu()"
+        class="text-white hover:text-zedek-gold transition"
+      >
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <div
+      id="mobileMenu"
+      class="fixed inset-0 bg-zedek-navy z-[60] hidden flex-col justify-center items-center opacity-0 transition-opacity duration-300"
+    >
+      <button
+        onclick="toggleMobileMenu()"
+        class="absolute top-6 right-6 text-slate-400 hover:text-white"
+      >
+        <i data-lucide="x" class="w-8 h-8"></i>
+      </button>
+      <div class="text-center space-y-6 max-h-[80vh] overflow-y-auto px-6">
+        <span
+          class="text-zedek-gold text-xs uppercase tracking-[0.3em] block mb-2 opacity-50"
+          >Main Directory</span
+        >
+        <!-- <a
+          href="stewardship.html"
+          class="block text-xl font-display text-white hover:text-zedek-gold transition"
+          >The Stewardship</a
+        > -->
+        <a
+          href="treasury.html"
+          class="block text-xl font-display text-white hover:text-zedek-gold transition"
+          >Partnership & Giving</a
+        >
+        <a
+          href="chronicles.html"
+          class="block text-xl font-display text-white hover:text-zedek-gold transition"
+          >Impact Reports</a
+        >
+        <a
+          href="first-steps.html"
+          class="block text-xl font-display text-white hover:text-zedek-gold transition"
+          >New Believers</a
+        >
+        <a
+          href="timeline.html"
+          class="block text-xl font-display text-white hover:text-zedek-gold transition"
+          >Calendar & Events</a
+        >
+        <div class="w-12 h-px bg-white/20 mx-auto my-6"></div>
+        <span
+          class="text-zedek-gold text-xs uppercase tracking-[0.3em] block mb-2 opacity-50"
+          >Quick Links</span
+        >
+        <a
+          href="expressions.html"
+          class="block text-sm text-slate-400 hover:text-white mb-2"
+          >Expressions</a
+        >
+        <a
+          href="media.html"
+          class="block text-sm text-slate-400 hover:text-white mb-2"
+          >The Journal</a
+        >
+        <a
+          href="store.html"
+          class="block text-sm text-slate-400 hover:text-white mb-6"
+          >The Armoury</a
+        >
+        <a
+          href="https://wa.me/2349035010746"
+          class="inline-block text-sm text-zedek-navy bg-zedek-gold font-bold uppercase tracking-widest border border-zedek-gold px-8 py-3 rounded hover:bg-white transition"
+          >Contact Leadership</a
+        >
+      </div>
+    </div>
+
+    <main
+      class="flex-1 overflow-y-auto relative no-scrollbar pb-24 md:pb-0 pt-20 px-4 md:px-12 bg-zedek-navy md:ml-64 flex flex-col justify-center items-center"
+    >
       <div class="max-w-2xl text-center fade-in">
         <i
           data-lucide="door-open"
@@ -195,8 +348,25 @@
         </div>
       </div>
     </main>
+
     <script>
       lucide.createIcons();
+      function toggleMobileMenu() {
+        const menu = document.getElementById("mobileMenu");
+        if (menu.classList.contains("hidden")) {
+          menu.classList.remove("hidden");
+          setTimeout(() => {
+            menu.classList.remove("opacity-0");
+            menu.classList.add("opacity-100");
+          }, 10);
+        } else {
+          menu.classList.remove("opacity-100");
+          menu.classList.add("opacity-0");
+          setTimeout(() => {
+            menu.classList.add("hidden");
+          }, 300);
+        }
+      }
     </script>
   </body>
 </html>
