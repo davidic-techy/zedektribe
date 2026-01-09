@@ -3,13 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tribe of Zedek | Mandate</title>
+    <title>Tribe of Zedek | The Mandate</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
+
     <link
       href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
+
     <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+
     <script>
       tailwind.config = {
         theme: {
@@ -33,110 +41,365 @@
         },
       };
     </script>
+
     <style>
-      .no-scrollbar::-webkit-scrollbar {
+      /* HIDE DEFAULT SCROLLBAR (Lenis handles it) */
+      html.lenis,
+      html.lenis body {
+        height: auto;
+      }
+      .lenis.lenis-smooth {
+        scroll-behavior: auto !important;
+      }
+      .lenis.lenis-smooth [data-lenis-prevent] {
+        overscroll-behavior: contain;
+      }
+      .lenis.lenis-stopped {
+        overflow: hidden;
+      }
+      .lenis.lenis-scrolling iframe {
+        pointer-events: none;
+      }
+      ::-webkit-scrollbar {
         display: none;
       }
-      .fade-in {
-        animation: fadeIn 0.8s ease-in-out;
-      }
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(10px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
 
-
+      /* HERO IMAGE */
       .hero-bg {
         background-image: url("https://images.unsplash.com/photo-1455849318743-b2233052fcff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
       }
+
+      /* TEXT REVEAL MASKS */
+      .line-mask {
+        overflow: hidden;
+        display: block;
+      }
+      .line-text {
+        transform: translateY(100%);
+        display: block;
+      } /* Start hidden below */
+
+      /* PRELOADER */
+      #preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #0b1120;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* MARQUEE */
+      .marquee-container {
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative;
+      }
+      .marquee-content {
+        display: inline-block;
+        animation: scroll 20s linear infinite;
+      }
+      @keyframes scroll {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
     </style>
   </head>
   <body
     class="bg-zedek-navy text-slate-300 font-sans h-screen flex flex-col md:flex-row overflow-hidden selection:bg-zedek-gold selection:text-zedek-navy"
   >
-    <nav class="hidden md:flex w-64 bg-zedek-navylight border-r border-white/5 flex-col justify-between z-50 h-full shadow-2xl fixed left-0 top-0 overflow-y-auto no-scrollbar">
-        <div class="flex flex-col items-center pt-10 px-6 text-center">
-            <div class="w-12 h-12 border-2 border-zedek-gold rotate-45 flex items-center justify-center mb-6"><span class="text-zedek-gold font-display font-bold text-xl -rotate-45">Z</span></div>
-            <h1 class="font-display text-xl text-white tracking-widest">TRIBE OF ZEDEK</h1>
-            <p class="text-xs text-zedek-gold uppercase tracking-[0.2em] mt-2">Est. Righteousness</p>
+    <div id="preloader">
+      <div class="flex flex-col items-center">
+        <div
+          class="w-16 h-16 border-2 border-zedek-gold rotate-45 flex items-center justify-center mb-4"
+        >
+          <span
+            class="text-zedek-gold font-display font-bold text-2xl -rotate-45"
+            >Z</span
+          >
         </div>
-        
-        <div class="w-full px-4 mt-10 space-y-2 flex-1">
-            <a href="index.html" class="flex items-center px-4 py-3 rounded-lg bg-white/5 transition group text-zedek-gold"><i data-lucide="crown" class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"></i><span class="text-sm uppercase tracking-wider font-medium">Mandate</span></a>
-            <a href="expressions.html" class="flex items-center px-4 py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"><i data-lucide="layers" class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"></i><span class="text-sm uppercase tracking-wider font-medium">Expressions</span></a>
-             <a href="first-steps.html" class="flex items-center px-4 py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"><i data-lucide="footprints" class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"></i><span class="text-sm uppercase tracking-wider font-medium">First Steps</span></a>
-            <a href="media.html" class="flex items-center px-4 py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"><i data-lucide="book-open" class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"></i><span class="text-sm uppercase tracking-wider font-medium">Journal</span></a>
-           
-            <!-- <a href="stewardship.html" class="flex items-center px-4 py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"><i data-lucide="users" class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"></i><span class="text-sm uppercase tracking-wider font-medium">Stewardship</span></a> -->
-            <a href="treasury.html" class="flex items-center px-4 py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"><i data-lucide="landmark" class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"></i><span class="text-sm uppercase tracking-wider font-medium">The Treasury</span></a>
-            <a href="chronicles.html" class="flex items-center px-4 py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"><i data-lucide="scroll" class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"></i><span class="text-sm uppercase tracking-wider font-medium">Chronicles</span></a>
-            <a href="timeline.html" class="flex items-center px-4 py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"><i data-lucide="calendar" class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"></i><span class="text-sm uppercase tracking-wider font-medium">Timeline</span></a>
-            
-            
-            <a href="store.html" class="flex items-center px-4 py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"><i data-lucide="shopping-bag" class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"></i><span class="text-sm uppercase tracking-wider font-medium">The Armoury</span></a>
-            <a href="join.html" class="flex items-center px-4 py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"><i data-lucide="user-plus" class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"></i><span class="text-sm uppercase tracking-wider font-medium">Join</span></a>
-        </div>
-        <div class="p-6 text-center"><p class="text-[10px] text-slate-500 uppercase tracking-widest">&copy; 2026 Tribe of Zedek</p></div>
-    </nav>
-
-    <nav class="md:hidden fixed bottom-0 w-full bg-zedek-navylight border-t border-white/5 z-50 flex justify-around py-3 px-2 shadow-2xl">
-        <a href="index.html" class="flex flex-col items-center text-zedek-gold hover:text-zedek-gold"><i data-lucide="crown" class="w-5 h-5 mb-1"></i><span class="text-[9px] uppercase tracking-widest">Mandate</span></a>
-        <a href="expressions.html" class="flex flex-col items-center text-slate-400 hover:text-zedek-gold"><i data-lucide="layers" class="w-5 h-5 mb-1"></i><span class="text-[9px] uppercase tracking-widest">Expressions</span></a>
-        <a href="media.html" class="flex flex-col items-center text-slate-400 hover:text-zedek-gold"><i data-lucide="book-open" class="w-5 h-5 mb-1"></i><span class="text-[9px] uppercase tracking-widest">Journal</span></a>
-        <a href="store.html" class="flex flex-col items-center text-slate-400 hover:text-zedek-gold"><i data-lucide="shopping-bag" class="w-5 h-5 mb-1"></i><span class="text-[9px] uppercase tracking-widest">Armoury</span></a>
-        <a href="join.html" class="flex flex-col items-center text-slate-400 hover:text-zedek-gold"><i data-lucide="user-plus" class="w-5 h-5 mb-1"></i><span class="text-[9px] uppercase tracking-widest">Join</span></a>
-    </nav>
-
-    <div class="md:hidden fixed top-0 w-full p-4 flex justify-between items-center z-40 bg-zedek-navy/90 backdrop-blur border-b border-white/5">
-        <span class="font-display text-zedek-gold font-bold tracking-widest text-lg">TRIBE OF ZEDEK</span>
-        <button onclick="toggleMobileMenu()" class="text-white hover:text-zedek-gold transition">
-            <i data-lucide="menu" class="w-6 h-6"></i>
-        </button>
+        <p
+          class="text-zedek-gold text-xs uppercase tracking-[0.5em] animate-pulse"
+        >
+          Tribe of Zedek...
+        </p>
+      </div>
     </div>
 
-    <div id="mobileMenu" class="fixed inset-0 bg-zedek-navy z-[60] hidden flex-col justify-center items-center opacity-0 transition-opacity duration-300">
-        <button onclick="toggleMobileMenu()" class="absolute top-6 right-6 text-slate-400 hover:text-white"><i data-lucide="x" class="w-8 h-8"></i></button>
-        
-        <div class="text-center space-y-6 max-h-[80vh] overflow-y-auto px-6">
-            <span class="text-zedek-gold text-xs uppercase tracking-[0.3em] block mb-2 opacity-50">Main Directory</span>
-            
-            <!-- <a href="stewardship.html" class="block text-xl font-display text-white hover:text-zedek-gold transition">The Stewardship</a> -->
-            <a href="treasury.html" class="block text-xl font-display text-white hover:text-zedek-gold transition">Partnership & Giving</a>
-            <a href="chronicles.html" class="block text-xl font-display text-white hover:text-zedek-gold transition">Impact Reports</a>
-            <a href="first-steps.html" class="block text-xl font-display text-white hover:text-zedek-gold transition">New Believers</a>
-            <a href="timeline.html" class="block text-xl font-display text-white hover:text-zedek-gold transition">Calendar & Events</a>
-            
-            <div class="w-12 h-px bg-white/20 mx-auto my-6"></div>
-            
-            <span class="text-zedek-gold text-xs uppercase tracking-[0.3em] block mb-2 opacity-50">Quick Links</span>
-            <a href="expressions.html" class="block text-sm text-slate-400 hover:text-white mb-2">Expressions</a>
-            <a href="media.html" class="block text-sm text-slate-400 hover:text-white mb-2">The Journal</a>
-            <a href="store.html" class="block text-sm text-slate-400 hover:text-white mb-6">The Armory</a>
-            
-            <a href="https://wa.me/2349035010746" class="inline-block text-sm text-zedek-navy bg-zedek-gold font-bold uppercase tracking-widest border border-zedek-gold px-8 py-3 rounded hover:bg-white transition">
-                Contact Leadership
-            </a>
+    <nav
+      class="hidden md:flex w-64 bg-zedek-navylight border-r border-white/5 flex-col justify-between z-50 h-full shadow-2xl fixed left-0 top-0 overflow-y-auto no-scrollbar"
+    >
+      <div class="flex flex-col items-center pt-10 px-6 text-center">
+        <div
+          class="w-12 h-12 border-2 border-zedek-gold rotate-45 flex items-center justify-center mb-6"
+        >
+          <span
+            class="text-zedek-gold font-display font-bold text-xl -rotate-45"
+            >Z</span
+          >
         </div>
+        <h1 class="font-display text-xl text-white tracking-widest">
+          TRIBE OF ZEDEK
+        </h1>
+        <p class="text-xs text-zedek-gold uppercase tracking-[0.2em] mt-2">
+          Est. Righteousness
+        </p>
+      </div>
+
+      <div class="w-full px-4 mt-10 space-y-2 flex-1">
+        <a
+          href="index.html"
+          class="flex items-center px-4 py-3 rounded-lg bg-white/5 transition group text-zedek-gold"
+          ><i data-lucide="crown" class="w-5 h-5 mr-3 text-zedek-gold"></i
+          ><span class="text-sm uppercase tracking-wider font-medium"
+            >Mandate</span
+          ></a
+        >
+        <a
+          href="expressions.html"
+          class="flex items-center px-4 py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="layers"
+            class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span class="text-sm uppercase tracking-wider font-medium"
+            >Expressions</span
+          ></a
+        >
+        <a
+          href="media.html"
+          class="flex items-center px-4 py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="book-open"
+            class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span class="text-sm uppercase tracking-wider font-medium"
+            >Journal</span
+          ></a
+        >
+        <a
+          href="first-steps.html"
+          class="flex items-center px-4 py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="footprints"
+            class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span class="text-sm uppercase tracking-wider font-medium"
+            >First Steps</span
+          ></a
+        >
+        <!-- <a
+          href="stewardship.html"
+          class="flex items-center px-4 py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="users"
+            class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span class="text-sm uppercase tracking-wider font-medium"
+            >Stewardship</span
+          ></a
+        > -->
+        <a
+          href="treasury.html"
+          class="flex items-center px-4 py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="landmark"
+            class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span class="text-sm uppercase tracking-wider font-medium"
+            >The Treasury</span
+          ></a
+        >
+        <a
+          href="chronicles.html"
+          class="flex items-center px-4 py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="scroll"
+            class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span class="text-sm uppercase tracking-wider font-medium"
+            >Chronicles</span
+          ></a
+        >
+        <a
+          href="timeline.html"
+          class="flex items-center px-4 py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="calendar"
+            class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span class="text-sm uppercase tracking-wider font-medium"
+            >Timeline</span
+          ></a
+        >
+
+        <a
+          href="store.html"
+          class="flex items-center px-4 py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="shopping-bag"
+            class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span class="text-sm uppercase tracking-wider font-medium"
+            >The Armoury</span
+          ></a
+        >
+        <a
+          href="join.html"
+          class="flex items-center px-4 py-3 rounded-lg hover:bg-white/5 transition group text-slate-400"
+          ><i
+            data-lucide="user-plus"
+            class="w-5 h-5 mr-3 group-hover:text-zedek-gold transition"
+          ></i
+          ><span class="text-sm uppercase tracking-wider font-medium"
+            >Join</span
+          ></a
+        >
+      </div>
+      <div class="p-6 text-center">
+        <p class="text-[10px] text-slate-500 uppercase tracking-widest">
+          &copy; 2026 Tribe of Zedek
+        </p>
+      </div>
+    </nav>
+
+    <nav
+      class="md:hidden fixed bottom-0 w-full bg-zedek-navylight border-t border-white/5 z-50 flex justify-around py-3 px-2 shadow-2xl"
+    >
+      <a href="index.html" class="flex flex-col items-center text-zedek-gold"
+        ><i data-lucide="crown" class="w-5 h-5 mb-1"></i
+        ><span class="text-[9px] uppercase tracking-widest">Mandate</span></a
+      >
+      <a
+        href="expressions.html"
+        class="flex flex-col items-center text-slate-400 hover:text-zedek-gold"
+        ><i data-lucide="layers" class="w-5 h-5 mb-1"></i
+        ><span class="text-[9px] uppercase tracking-widest"
+          >Expressions</span
+        ></a
+      >
+      <a
+        href="media.html"
+        class="flex flex-col items-center text-slate-400 hover:text-zedek-gold"
+        ><i data-lucide="book-open" class="w-5 h-5 mb-1"></i
+        ><span class="text-[9px] uppercase tracking-widest">Journal</span></a
+      >
+      <a
+        href="store.html"
+        class="flex flex-col items-center text-slate-400 hover:text-zedek-gold"
+        ><i data-lucide="shopping-bag" class="w-5 h-5 mb-1"></i
+        ><span class="text-[9px] uppercase tracking-widest">Armoury</span></a
+      >
+      <a
+        href="join.html"
+        class="flex flex-col items-center text-slate-400 hover:text-zedek-gold"
+        ><i data-lucide="user-plus" class="w-5 h-5 mb-1"></i
+        ><span class="text-[9px] uppercase tracking-widest">Join</span></a
+      >
+    </nav>
+
+    <div
+      class="md:hidden fixed top-0 w-full p-4 flex justify-between items-center z-40 bg-zedek-navy/90 backdrop-blur border-b border-white/5"
+    >
+      <span
+        class="font-display text-zedek-gold font-bold tracking-widest text-lg"
+        >TRIBE OF ZEDEK</span
+      >
+      <button
+        onclick="toggleMobileMenu()"
+        class="text-white hover:text-zedek-gold transition"
+      >
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
     </div>
-    
-    
+
+    <div
+      id="mobileMenu"
+      class="fixed inset-0 bg-zedek-navy z-[60] hidden flex-col justify-center items-center opacity-0 transition-opacity duration-300"
+    >
+      <button
+        onclick="toggleMobileMenu()"
+        class="absolute top-6 right-6 text-slate-400 hover:text-white"
+      >
+        <i data-lucide="x" class="w-8 h-8"></i>
+      </button>
+      <div class="text-center space-y-6 max-h-[80vh] overflow-y-auto px-6">
+        <span
+          class="text-zedek-gold text-xs uppercase tracking-[0.3em] block mb-2 opacity-50"
+          >Main Directory</span
+        >
+        <!-- <a
+          href="stewardship.html"
+          class="block text-xl font-display text-white hover:text-zedek-gold transition"
+          >The Stewardship</a
+        > -->
+        <a
+          href="treasury.html"
+          class="block text-xl font-display text-white hover:text-zedek-gold transition"
+          >Partnership & Giving</a
+        >
+        <a
+          href="chronicles.html"
+          class="block text-xl font-display text-white hover:text-zedek-gold transition"
+          >Impact Reports</a
+        >
+        <a
+          href="first-steps.html"
+          class="block text-xl font-display text-white hover:text-zedek-gold transition"
+          >New Believers</a
+        >
+        <a
+          href="timeline.html"
+          class="block text-xl font-display text-white hover:text-zedek-gold transition"
+          >Calendar & Events</a
+        >
+        <div class="w-12 h-px bg-white/20 mx-auto my-6"></div>
+        <span
+          class="text-zedek-gold text-xs uppercase tracking-[0.3em] block mb-2 opacity-50"
+          >Quick Links</span
+        >
+        <a
+          href="expressions.html"
+          class="block text-sm text-slate-400 hover:text-white mb-2"
+          >Expressions</a
+        >
+        <a
+          href="media.html"
+          class="block text-sm text-slate-400 hover:text-white mb-2"
+          >The Journal</a
+        >
+        <a
+          href="store.html"
+          class="block text-sm text-slate-400 hover:text-white mb-6"
+          >The Armory</a
+        >
+        <a
+          href="https://wa.me/2349035010746"
+          class="inline-block text-sm text-zedek-navy bg-zedek-gold font-bold uppercase tracking-widest border border-zedek-gold px-8 py-3 rounded hover:bg-white transition"
+          >Contact Leadership</a
+        >
+      </div>
+    </div>
 
     <main
-      class="flex-1 overflow-y-auto relative no-scrollbar pb-24 md:pb-0 md:ml-64"
+      id="content-scroll"
+      class="flex-1 overflow-y-auto relative no-scrollbar pb-24 md:pb-0 md:ml-64 bg-zedek-navy"
     >
       <div
-        class="min-h-screen flex flex-col justify-center items-center text-center px-4 relative"
+        class="h-screen flex flex-col justify-center items-center text-center px-4 relative overflow-hidden"
       >
-        <div class="absolute inset-0 hero-bg">
+        <div class="absolute inset-0 hero-bg scale-110 z-0" id="hero-img">
           <div
             class="absolute inset-0 bg-zedek-navy/80 mix-blend-multiply"
           ></div>
@@ -145,65 +408,98 @@
           ></div>
         </div>
 
-        <div class="relative z-10 max-w-4xl fade-in mt-10">
-          <div class="inline-block border-b border-zedek-gold mb-6 pb-2">
+        <div class="relative z-10 max-w-4xl mt-10">
+          <div
+            class="inline-block border-b border-zedek-gold mb-6 pb-2 line-mask"
+          >
             <span
-              class="text-zedek-gold text-xs font-bold tracking-[0.3em] uppercase"
+              class="line-text text-zedek-gold text-xs font-bold tracking-[0.3em] uppercase"
               >One Community. Four Expressions.</span
             >
           </div>
+
           <h1
             class="text-4xl md:text-7xl font-display font-bold text-white mb-6 leading-tight drop-shadow-2xl"
           >
-            A People Prepared.<br />An Army Rising.
+            <span class="line-mask"
+              ><span class="line-text">A People Prepared.</span></span
+            >
+            <span class="line-mask"
+              ><span class="line-text">An Army Rising.</span></span
+            >
           </h1>
-          <p
-            class="text-lg md:text-xl text-slate-200 font-serif italic max-w-2xl mx-auto mb-10 drop-shadow-lg"
+
+          <div class="line-mask mb-8">
+            <p
+              class="line-text text-lg md:text-xl text-slate-200 font-serif italic max-w-2xl mx-auto drop-shadow-lg"
+            >
+              "...They storm the city and burst through its defenses. Together
+              they are unstoppable" — Joel 2:8
+            </p>
+          </div>
+
+          <div
+            class="flex flex-col md:flex-row gap-4 justify-center mt-8 opacity-0"
+            id="hero-buttons"
           >
-            "After this the Lord appointed seventy-two others and sent them on ahead of him, two by two, into every town and place where he himself was about to go...." — Luke 10:1
-          </p>
-          <div class="flex flex-col md:flex-row gap-4 justify-center mt-8">
-    <a href="expressions.html" class="inline-block border border-zedek-gold text-zedek-gold hover:bg-zedek-gold hover:text-zedek-navy font-bold py-4 px-8 transition duration-300 font-display tracking-widest uppercase text-xs">
-        Explore Expressions
-    </a>
-    <a href="join.html" class="inline-block bg-zedek-gold text-zedek-navy font-bold py-4 px-8 hover:bg-white transition duration-300 font-display tracking-widest uppercase text-xs shadow-[0_0_20px_rgba(212,175,55,0.3)]">
-        Join The Tribe
-    </a>
-</div>¦
+            <a
+              href="expressions.html"
+              class="inline-block border border-zedek-gold text-zedek-gold hover:bg-zedek-gold hover:text-zedek-navy font-bold py-4 px-8 transition duration-300 font-display tracking-widest uppercase text-xs"
+            >
+              Explore Expressions
+            </a>
+            <a
+              href="join.html"
+              class="inline-block bg-zedek-gold text-zedek-navy font-bold py-4 px-8 hover:bg-white transition duration-300 font-display tracking-widest uppercase text-xs shadow-[0_0_20px_rgba(212,175,55,0.3)]"
+            >
+              Join The Tribe
+            </a>
+          </div>
         </div>
       </div>
 
-      <div id="content" class="max-w-6xl mx-auto px-6 md:px-12 py-20 fade-in">
+      <div
+        class="bg-zedek-gold text-zedek-navy py-4 border-y border-zedek-navy marquee-container"
+      >
+        <div
+          class="marquee-content font-display font-bold text-xl uppercase tracking-widest"
+        >
+          Tribe of Zedek • Est. Righteousness • Consecration • Excellence •
+          Community • Tribe of Zedek • Est. Righteousness • Consecration •
+          Excellence • Community • Tribe of Zedek • Est. Righteousness •
+          Consecration • Excellence • Community • Tribe of Zedek • Est.
+          Righteousness • Consecration • Excellence • Community •
+        </div>
+      </div>
+
+      <div class="max-w-6xl mx-auto px-6 md:px-12 py-20">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
           <div
-            class="bg-zedek-navylight p-8 border-t-4 border-zedek-gold hover:-translate-y-2 transition duration-500"
+            class="reveal-card bg-zedek-navylight p-8 border-t-4 border-zedek-gold hover:-translate-y-2 transition duration-500"
           >
             <i data-lucide="flame" class="text-zedek-gold w-8 h-8 mb-4"></i>
             <h3 class="text-xl font-display text-white mb-3">Consecration</h3>
             <p class="text-slate-400 text-sm leading-relaxed">
               We are a separated people. In a world of compromise, we choose the
-              altar. We do not just attend church; we are the church.
+              altar.
             </p>
           </div>
           <div
-            class="bg-zedek-navylight p-8 border-t-4 border-slate-600 hover:border-zedek-gold hover:-translate-y-2 transition duration-500"
+            class="reveal-card bg-zedek-navylight p-8 border-t-4 border-slate-600 hover:border-zedek-gold hover:-translate-y-2 transition duration-500"
           >
             <i data-lucide="book-open" class="text-zedek-gold w-8 h-8 mb-4"></i>
             <h3 class="text-xl font-display text-white mb-3">Excellence</h3>
             <p class="text-slate-400 text-sm leading-relaxed">
-              Daniel 6:3. We believe spiritual fire should produce marketplace
-              relevance. We lead in our industries because we serve an Excellent
-              Spirit.
+              Spiritual fire producing marketplace relevance. Daniel 6:3.
             </p>
           </div>
           <div
-            class="bg-zedek-navylight p-8 border-t-4 border-slate-600 hover:border-zedek-gold hover:-translate-y-2 transition duration-500"
+            class="reveal-card bg-zedek-navylight p-8 border-t-4 border-slate-600 hover:border-zedek-gold hover:-translate-y-2 transition duration-500"
           >
             <i data-lucide="users" class="text-zedek-gold w-8 h-8 mb-4"></i>
             <h3 class="text-xl font-display text-white mb-3">Community</h3>
             <p class="text-slate-400 text-sm leading-relaxed">
-              We are not an audience; we are a tribe. We carry each other's
-              burdens and sharpen each other's iron. No one walks alone.
+              Not an audience, but a tribe. We carry each other's burdens.
             </p>
           </div>
         </div>
@@ -212,7 +508,7 @@
           <div
             class="flex justify-between items-end border-b border-white/10 pb-4 mb-8"
           >
-            <h3 class="text-2xl font-display text-white">
+            <h3 class="text-2xl font-display text-white reveal-text">
               The Four Expressions
             </h3>
             <a
@@ -224,7 +520,7 @@
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <a
               href="expression-core.html"
-              class="group bg-zedek-navylight p-6 hover:bg-white/5 transition"
+              class="group bg-zedek-navylight p-6 hover:bg-white/5 transition reveal-card"
             >
               <i
                 data-lucide="flame"
@@ -235,7 +531,7 @@
             </a>
             <a
               href="expression-sound.html"
-              class="group bg-zedek-navylight p-6 hover:bg-white/5 transition"
+              class="group bg-zedek-navylight p-6 hover:bg-white/5 transition reveal-card"
             >
               <i
                 data-lucide="music"
@@ -246,7 +542,7 @@
             </a>
             <a
               href="expression-youth.html"
-              class="group bg-zedek-navylight p-6 hover:bg-white/5 transition"
+              class="group bg-zedek-navylight p-6 hover:bg-white/5 transition reveal-card"
             >
               <i
                 data-lucide="sprout"
@@ -255,9 +551,9 @@
               <h4 class="text-white font-bold mb-1">Formation</h4>
               <p class="text-xs text-slate-500">Youth & Career</p>
             </a>
-            <span
+            <a
               href="expression-city.html"
-              class="group bg-zedek-navylight p-6 hover:bg-white/5 transition"
+              class="group bg-zedek-navylight p-6 hover:bg-white/5 transition reveal-card"
             >
               <i
                 data-lucide="map-pin"
@@ -270,7 +566,7 @@
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
-          <div>
+          <div class="reveal-card">
             <div
               class="flex justify-between items-end border-b border-white/10 pb-4 mb-8"
             >
@@ -291,8 +587,7 @@
               </h4>
               <p class="text-sm text-slate-400 leading-relaxed mb-6">
                 In a generation obsessed with platforms, the priesthood calls us
-                to the secret place. What happens when the applause stops but
-                the service continues?
+                to the secret place.
               </p>
               <a
                 href="media.html"
@@ -302,7 +597,7 @@
             </div>
           </div>
 
-          <div>
+          <div class="reveal-card">
             <div
               class="flex justify-between items-end border-b border-white/10 pb-4 mb-8"
             >
@@ -327,56 +622,40 @@
               <a
                 href="store.html"
                 class="inline-block bg-white text-zedek-navy font-bold py-3 px-6 text-xs uppercase tracking-widest hover:bg-zedek-gold transition"
+                >Shop Now</a
               >
-                Shop Now
-              </a>
             </div>
           </div>
         </div>
 
-        <div class="flex flex-col md:flex-row gap-12 items-center mb-20">
-          <div class="w-full md:w-1/2">
-            <img
-              src="https://images.unsplash.com/photo-1528562309172-23c8e310328b?q=80&w=2070&auto=format&fit=crop"
-              class="w-full h-80 object-cover grayscale rounded-sm border border-white/10"
-            />
-          </div>
-          <div class="w-full md:w-1/2">
-            <h3 class="text-2xl font-display text-white mb-4">Welcome Home.</h3>
-            <p class="text-slate-400 leading-relaxed mb-6">
-              The Tribe of Zedek is more than a ministry; it is a formation. We
-              are responding to the cry of a generation that is tired of
-              religion but hungry for God.<br /><br />
-              Whether you are a creative seeking purpose, a professional seeking
-              fire, or a student seeking focus, there is a place for you here.
-            </p>
-            <a
-              href="stewardship.html"
-              class="text-zedek-gold text-xs uppercase tracking-widest border-b border-zedek-gold pb-1 hover:text-white transition"
-              >Meet The Stewardship</a
-            >
-          </div>
-        </div>
-
         <div
-          class="bg-zedek-gold text-zedek-navy p-12 text-center rounded-sm mb-20"
+          class="bg-zedek-gold text-zedek-navy p-12 text-center rounded-sm mb-20 reveal-card"
         >
           <h3 class="text-2xl font-display font-bold mb-2">
             Join The Inner Circle
           </h3>
           <p class="text-sm text-zedek-navy/80 mb-6">
-            Get weekly formations, prayer points, and updates directly to your
-            inbox.
+            Get weekly formations directly to your inbox.
           </p>
-          <form action="https://formspree.io/f/mwvpnvbd" method="POST" class="flex flex-col md:flex-row gap-4 justify-center max-w-md mx-auto">
-    
-    <input type="email" name="email" required placeholder="Your Email Address" class="w-full p-3 bg-white/20 placeholder-zedek-navy/60 border border-zedek-navy/20 focus:outline-none text-zedek-navy focus:bg-white/40 transition">
-    
-    <button type="submit" class="bg-zedek-navy text-zedek-gold font-bold uppercase tracking-widest px-8 py-3 hover:bg-white hover:text-zedek-navy transition">
-        Subscribe
-    </button>
-    
-</form>
+          <form
+            action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+            method="POST"
+            class="flex flex-col md:flex-row gap-4 justify-center max-w-md mx-auto"
+          >
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="Your Email Address"
+              class="w-full p-3 bg-white/20 placeholder-zedek-navy/60 border border-zedek-navy/20 focus:outline-none text-zedek-navy focus:bg-white/40 transition"
+            />
+            <button
+              type="submit"
+              class="bg-zedek-navy text-zedek-gold font-bold uppercase tracking-widest px-8 py-3 hover:bg-white hover:text-zedek-navy transition"
+            >
+              Subscribe
+            </button>
+          </form>
         </div>
       </div>
     </main>
@@ -398,6 +677,99 @@
             menu.classList.add("hidden");
           }, 300);
         }
+      }
+
+      // --- ANIMATION INITIALIZATION ---
+
+      // 1. Initialize Smooth Scroll (Lenis)
+      const lenis = new Lenis({
+        wrapper: document.getElementById("content-scroll"), // We scroll the MAIN tag, not body
+        content: document.getElementById("content-scroll"),
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        direction: "vertical",
+        gestureDirection: "vertical",
+        smooth: true,
+        mouseMultiplier: 1,
+        smoothTouch: false,
+        touchMultiplier: 2,
+      });
+
+      // Sync Lenis with GSAP ScrollTrigger
+      lenis.on("scroll", ScrollTrigger.update);
+      gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+      });
+      gsap.ticker.lagSmoothing(0);
+
+      // 2. Preloader
+      window.addEventListener("load", () => {
+        const preloader = document.getElementById("preloader");
+        gsap.to(preloader, {
+          y: "-100%",
+          duration: 1,
+          ease: "power4.inOut",
+          onComplete: () => {
+            initSiteAnimations(); // Start other animations only after loader is gone
+          },
+        });
+      });
+
+      // 3. Site Animations
+      function initSiteAnimations() {
+        // Register
+        gsap.registerPlugin(ScrollTrigger);
+
+        // A. Hero Reveal (Text Slides Up)
+        gsap.to(".line-text", {
+          y: 0,
+          duration: 1.5,
+          stagger: 0.1,
+          ease: "power4.out",
+          delay: 0.2,
+        });
+
+        // B. Hero Buttons Fade In
+        gsap.to("#hero-buttons", {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: 1,
+          ease: "power2.out",
+        });
+
+        // C. Parallax Image
+        gsap.to("#hero-img", {
+          scrollTrigger: {
+            trigger: "main",
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+            scroller: "main", // IMPORTANT: Because we are scrolling the main tag
+          },
+          y: 200,
+          ease: "none",
+        });
+
+        // D. Reveal Elements on Scroll
+        gsap.utils.toArray(".reveal-card").forEach((card) => {
+          gsap.fromTo(
+            card,
+            { y: 50, opacity: 0 },
+            {
+              scrollTrigger: {
+                trigger: card,
+                start: "top 85%",
+                toggleActions: "play none none reverse",
+                scroller: "main", // IMPORTANT
+              },
+              y: 0,
+              opacity: 1,
+              duration: 1,
+              ease: "power3.out",
+            }
+          );
+        });
       }
     </script>
   </body>
